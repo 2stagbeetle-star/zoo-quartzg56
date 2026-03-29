@@ -17,66 +17,96 @@ draft: false
 
 > **最終確認日:** 2026-03-29
 > 求人情報は随時変動します。**必ず各施設の公式採用ページで最新情報をご確認ください。**
-> このページは定期的に更新されます。
 
 ---
 
-## 求人情報ポータル（一括検索）
+## 求人情報ポータル・SNS（まず確認）
 
-まず以下のポータルサイトで広く検索することをおすすめします。
-
-| サイト名 | 特徴 | URL |
-|---------|------|-----|
-| zoo-palette 求人情報 | 動物園に特化した求人アクセスページ | [zoo-palette.com](https://www.zoo-palette.com/動物園求人情報アクセスページ/) |
-| 飼育員になるにはナビ | 飼育員求人の専門サイト | [keepersnavi.com](https://keepersnavi.com/) |
-| activo（動物愛護系） | NPO・ボランティア求人 | [activo.jp/job/animal](https://activo.jp/job/animal) |
+| サイト/アカウント | 特徴 | URL/リンク |
+|----------------|------|-----------|
+| zoo-palette 求人 | 動物園特化・全国網羅 | [zoo-palette.com](https://www.zoo-palette.com/%E5%8B%95%E7%89%A9%E5%9C%92%E6%B1%82%E4%BA%BA%E6%83%85%E5%A0%B1%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E3%83%9A%E3%83%BC%E3%82%B8/) |
+| 飼育員になるにはナビ 求人 | 飼育員専門サイト・求人カテゴリあり | [keepersnavi.com/category/求人情報](https://keepersnavi.com/category/%E6%B1%82%E4%BA%BA%E6%83%85%E5%A0%B1/) |
+| X: @aq_hatarakitai | 水族館求人をリアルタイム投稿・フォロー推奨 | [x.com/aq_hatarakitai](https://x.com/aq_hatarakitai?lang=ja) |
+| X: @zootitti2 | 動物園求人・飼育員情報を投稿 | [x.com/zootitti2](https://x.com/zootitti2) |
+| activo（動物愛護系） | NPO・ボランティア求人（動物・自然関係のみ掲載） | [activo.jp/job/animal](https://activo.jp/job/animal) |
 | activo（絶滅危惧種） | 保全系NPO求人 | [activo.jp/job/endangered_species](https://activo.jp/job/endangered_species) |
-| 求人ボックス（水族館飼育員） | 全国の水族館飼育員求人 | [求人ボックス](https://xn--pckua2a7gp15o89zb.com/水族館-飼育員の仕事) |
+| 求人ボックス（水族館飼育員） | 全国水族館求人集約 | [求人ボックス](https://xn--pckua2a7gp15o89zb.com/水族館-飼育員の仕事) |
 | JICA PARTNER（自然環境保全） | 国際協力・保全分野 | [partner.jica.go.jp](https://partner.jica.go.jp/Recruit/Search?JobFieldsPram=15) |
 
 ---
 
-## 動物園の採用情報
+## 動物園の採用情報（市立・都立）
 
-### 東京動物園協会（恩賜上野動物園・多摩動物公園 他）
+> 市立動物園は**各市の職員採用試験**が必要です。→ [[市立動物園_市役所採用ページ一覧]] を参照
 
-[[東京動物園協会]] が管理する都内4施設（上野・多摩・葛西臨海・井の頭）の採用情報。
+### 東京動物園協会（都立4施設）
 
-| 項目 | 内容 |
+| 施設 | 所在 |
 |------|------|
-| 施設 | 恩賜上野動物園 / 多摩動物公園 / 葛西臨海水族園 / 井の頭自然文化園 |
-| 運営 | 公益財団法人 東京動物園協会（TZPS） |
-| 採用職種例 | 正職員（飼育・事務・施設・案内・販売） / 嘱託員 / アルバイト |
-| 採用ページ | [tzps.or.jp/recruit](https://www.tzps.or.jp/recruit/) |
+| 恩賜上野動物園 | 東京都台東区 |
+| 多摩動物公園 | 東京都日野市 |
+| 葛西臨海水族園 | 東京都江戸川区 |
+| 井の頭自然文化園 | 東京都武蔵野市 |
 
-**備考:** 正職員採用は年1回程度。嘱託員・アルバイトは随時募集あり。
+- **採用ページ:** [tzps.or.jp/recruit](https://www.tzps.or.jp/recruit/)
+- **職種:** 正職員（飼育・事務・施設・案内・販売）/ 嘱託員 / アルバイト
+- **備考:** 正職員は年1回程度。嘱託員・アルバイトは随時
 
 ---
 
-### 京都市動物園
+### 旭山動物園（旭川市立）
 
-| 項目 | 内容 |
-|------|------|
-| 施設 | 京都市動物園 |
-| 採用ページ | [zoo.city.kyoto.lg.jp](https://zoo.city.kyoto.lg.jp/) |
-| 備考 | 動物飼育スタッフ（アルバイト）等を随時募集 |
+- **採用:** 旭川市職員として採用（市の採用試験が必要）
+- **市採用ページ:** [city.asahikawa.hokkaido.jp/1400/saiyo](https://www.city.asahikawa.hokkaido.jp/1400/saiyo/index.html)
+- **会計年度任用職員:** [随時募集ページ](https://www.city.asahikawa.hokkaido.jp/1400/saiyo/saiyo_update/p002287.html)
 
 ---
 
-### 旭山動物園（北海道旭川市）
+### 円山動物園（札幌市立）
 
-| 項目 | 内容 |
-|------|------|
-| 運営 | 旭川市（市立） |
-| 採用ページ | [city.asahikawa.hokkaido.jp](https://www.city.asahikawa.hokkaido.jp/) → 職員採用情報 |
-| 備考 | 旭川市職員（動物園職員）として採用。市の採用試験を受験する必要あり |
+- **採用:** 札幌市職員として採用
+- **職員採用ページ:** [city.sapporo.jp/zoo/recruit](https://www.city.sapporo.jp/zoo/01sougouannai/09recruit/maruyamazoo_recruit.html)
 
 ---
 
-### 全国の動物園採用情報を探す
+### おびひろ動物園（帯広市立）
 
-- **JAZA 加盟園館一覧:** [jaza.jp](https://www.jaza.jp/) → 各園の公式サイトへアクセス
-- **zoo-palette 求人まとめ:** 全国動物園の採用情報へのリンク集
+- **採用:** 帯広市職員（会計年度任用職員）として採用
+- **採用ページ:** [city.obihiro.hokkaido.jp/zoo/1008079](https://www.city.obihiro.hokkaido.jp/zoo/1008079/index.html)
+
+---
+
+### 天王寺動物園（地方独立行政法人）
+
+- **採用ページ:** [tennojizoo.jp/recruit](https://www.tennojizoo.jp/recruit/)
+- **職種:** 動物飼育・技術職 / 事務職
+- **備考:** 地独法のため市職員試験不要、独自採用
+
+---
+
+### 京都市動物園（京都市立）
+
+- **採用:** 京都市職員として採用
+- **動物飼育スタッフ（アルバイト）:** 随時募集あり
+- **市採用ページ:** [city.kyoto.lg.jp/jinji](https://www.city.kyoto.lg.jp/jinji/)
+
+---
+
+### 東山動植物園（名古屋市立）
+
+- **採用:** 名古屋市職員として採用
+- **市採用ページ:** [city.nagoya.jp/somu/category/9-2](https://www.city.nagoya.jp/somu/category/9-2-0-0-0-0-0-0-0-0.html)
+
+---
+
+### 神戸市立王子動物園（神戸市立）
+
+- **採用:** 神戸市職員として採用
+- **市採用ページ:** [city.kobe.lg.jp/a83752](https://www.city.kobe.lg.jp/a83752/)
+
+---
+
+> 市立動物園の採用ショートカット一覧 → [[市立動物園_市役所採用ページ一覧]]
 
 ---
 
@@ -84,75 +114,50 @@ draft: false
 
 ### 京都水族館
 
-| 項目 | 内容 |
-|------|------|
-| 運営 | オリックス水族館株式会社 |
-| 採用ページ | [kyoto-aquarium.com/recruit](https://www.kyoto-aquarium.com/recruit/index.html) |
-| 採用職種 | 飼育スタッフ / 接客スタッフ / 正社員・契約社員・アルバイト |
-
----
+- **採用ページ:** [kyoto-aquarium.com/recruit](https://www.kyoto-aquarium.com/recruit/index.html)
+- **職種:** 飼育スタッフ / 接客スタッフ（正社員・契約社員・アルバイト）
 
 ### 四国水族館
 
-| 項目 | 内容 |
-|------|------|
-| 採用ページ | [shikoku-aquarium.jp/recruit](https://shikoku-aquarium.jp/recruit/) |
-| 採用職種 | 新卒・中途・パート/アルバイト |
+- **採用ページ:** [shikoku-aquarium.jp/recruit](https://shikoku-aquarium.jp/recruit/)
+- **職種:** 新卒・中途・パート/アルバイト
+
+### X で水族館求人をリアルタイム確認
+
+- **@aq_hatarakitai** — 水族館求人を随時ツイート。サンシャイン水族館・新江ノ島水族館等の求人投稿実績あり
+  - [x.com/aq_hatarakitai](https://x.com/aq_hatarakitai)
 
 ---
 
-### 水族館の採用情報を探す
-
-| サイト | URL |
-|--------|-----|
-| 求人ボックス（水族館飼育員） | [リンク](https://xn--pckua2a7gp15o89zb.com/水族館-飼育員の仕事) |
-| X（旧Twitter）水族館で働きたい | [@aq_hatarakitai](https://x.com/aq_hatarakitai) |
-
----
-
-## NPO法人・保全団体の採用情報
+## NPO法人・保全団体の採用情報（動物・自然関係のみ）
 
 ### WWFジャパン（世界自然保護基金 日本委員会）
 
-[[WWF]] は国際的な自然保護団体。日本支部では随時スタッフを募集。
+[[WWF]] — 野生生物保護・生態系保全を専門とする国際NGO。
 
-| 項目 | 内容 |
-|------|------|
-| 採用ページ | [wwf.or.jp/recinfo](https://www.wwf.or.jp/recinfo/) |
-| 職種例 | プログラムスタッフ / 広報・ファンドレイザー / 正規職員・契約社員 |
-
----
+- **採用ページ:** [wwf.or.jp/recinfo](https://www.wwf.or.jp/recinfo/)
+- **職種:** 自然保護プログラムスタッフ / 広報・ファンドレイザー
 
 ### 日本自然保護協会（NACS-J）
 
-[[日本自然保護協会]] は生物多様性保全を専門とするNGO。
+[[日本自然保護協会]] — 生物多様性保全を専門とする国内NGO。
 
-| 項目 | 内容 |
-|------|------|
-| 採用ページ | [nacsj.or.jp/recruit](https://www.nacsj.or.jp/recruit/) |
-| 職種例 | 自然保護スタッフ / 政策担当 / 広報・事務 |
-
----
+- **採用ページ:** [nacsj.or.jp/recruit](https://www.nacsj.or.jp/recruit/)
+- **職種:** 自然保護スタッフ / 政策担当 / 広報
 
 ### 野生動物保護管理事務所（WMO）
 
-シカ・クマ・サル・外来種の調査・管理を専門とする機関。
+シカ・クマ・サル・外来種の調査・管理専門機関。
 
-| 項目 | 内容 |
-|------|------|
-| 採用ページ | [wmo.co.jp/recruit_page](https://wmo.co.jp/recruit_page) |
-| 職種例 | 野生動物調査員 / 管理スタッフ |
-
----
+- **採用ページ:** [wmo.co.jp/recruit_page](https://wmo.co.jp/recruit_page)
+- **職種:** 野生動物調査員 / 管理スタッフ
 
 ### 認定NPO法人 生態工房
 
 都市生態系の保全・調査を専門とするNPO。
 
-| 項目 | 内容 |
-|------|------|
-| 採用ページ | [eco-works.gr.jp](https://eco-works.gr.jp/about/recruit_arbeit/) |
-| 職種例 | 調査スタッフ / アルバイト |
+- **採用ページ:** [eco-works.gr.jp](https://eco-works.gr.jp/about/recruit_arbeit/)
+- **職種:** 調査スタッフ / アルバイト
 
 ---
 
@@ -160,64 +165,54 @@ draft: false
 
 ### 環境省 アクティブ・レンジャー
 
-国立公園や自然保護区での現場業務を担う非常勤職員。
+国立公園での現場業務担当の非常勤職員。
 
-| 項目 | 内容 |
-|------|------|
-| 採用ページ | [env.go.jp/guide/saiyo](https://www.env.go.jp/guide/saiyo/cat_x1/index.html) |
-| 配属先例 | 国立公園（屋久島・阿蘇・雲仙等） |
-| 業務内容 | パトロール・利用者指導・環境教育・モニタリング |
-
----
+- **採用ページ:** [env.go.jp/guide/saiyo](https://www.env.go.jp/guide/saiyo/cat_x1/index.html)
+- **配属:** 屋久島・阿蘇・雲仙・えびの等の国立公園
+- **業務:** パトロール・環境教育・生態モニタリング
 
 ### JICA（国際協力機構）— 自然環境保全分野
 
-国際的な保全プロジェクトへの参加機会。
-
-| 項目 | 内容 |
-|------|------|
-| 採用ページ | [partner.jica.go.jp](https://partner.jica.go.jp/Recruit/Search?JobFieldsPram=15) |
-| 職種例 | 専門家派遣 / 青年海外協力隊（自然保護） |
+- **採用ページ:** [partner.jica.go.jp](https://partner.jica.go.jp/Recruit/Search?JobFieldsPram=15)
+- **職種:** 専門家派遣 / JICA海外協力隊（自然保護）
 
 ---
 
 ## 採用に向けた準備
 
-### 飼育員に求められるスキル・資格
+### 飼育員に求められる資格・スキル
 
 | 資格・スキル | 重要度 | 備考 |
 |------------|--------|------|
 | 愛玩動物看護師 / 動物看護師 | ★★★ | 近年需要増 |
-| 潜水士（水族館） | ★★★ | 水族館飼育員には必須に近い |
-| 普通自動車免許 | ★★★ | ほぼ必須 |
+| 潜水士（水族館） | ★★★ | 水族館飼育員にほぼ必須 |
+| 普通自動車免許 | ★★★ | ほぼ全施設で必要 |
 | 理学・農学・獣医学系学位 | ★★☆ | 専門知識の基礎 |
-| フォークリフト運転技能 | ★☆☆ | 大型施設では有利 |
+| 地方公務員試験（市立施設） | ★★★ | 市立動物園は必須 |
 
-### 志望動機のポイント
+### おすすめ書籍
 
-- **種保存・保全への貢献:** [[動物保護・保全生物学]] との接点を具体的に
-- **動物行動観察の実績:** ボランティア・インターン経験
-- **コミュニケーション力:** 来園者教育・チームワーク
-- **体力・安全管理意識:** 飼育現場は体力仕事かつ危険を伴う
+→ [[動物園・自然科学関連書籍・雑誌一覧]] も参照
 
 ---
 
 ## 関連ページ
 
-- [[JAZA（日本動物園水族館協会）]]
-- [[飼育員になるには]]
+- [[市立動物園_市役所採用ページ一覧]]
+- [[動物園・自然科学関連書籍・雑誌一覧]]
 - [[動物園学・博物館学]]
 - [[フィールドワーク・調査手法]]
 
 ## 参考・引用元
 
 - [東京動物園協会 採用情報](https://www.tzps.or.jp/recruit/)
-- [日本動物園水族館協会（JAZA）](https://www.jaza.jp/)
-- [WWFジャパン 採用情報](https://www.wwf.or.jp/recinfo/)
-- [日本自然保護協会 採用情報](https://www.nacsj.or.jp/recruit/)
+- [旭川市職員採用](https://www.city.asahikawa.hokkaido.jp/1400/saiyo/index.html)
+- [札幌市円山動物園 職員採用](https://www.city.sapporo.jp/zoo/01sougouannai/09recruit/maruyamazoo_recruit.html)
+- [帯広市 動物園職員募集](https://www.city.obihiro.hokkaido.jp/zoo/1008079/index.html)
+- [天王寺動物園 採用情報](https://www.tennojizoo.jp/recruit/)
+- [WWFジャパン 採用](https://www.wwf.or.jp/recinfo/)
+- [日本自然保護協会 採用](https://www.nacsj.or.jp/recruit/)
 - [野生動物保護管理事務所 採用](https://wmo.co.jp/recruit_page)
-- [環境省 アクティブ・レンジャー採用](https://www.env.go.jp/guide/saiyo/cat_x1/index.html)
-- [JICA PARTNER 自然環境保全求人](https://partner.jica.go.jp/Recruit/Search?JobFieldsPram=15)
-- [zoo-palette 動物園求人情報](https://www.zoo-palette.com/動物園求人情報アクセスページ/)
+- [環境省 アクティブ・レンジャー](https://www.env.go.jp/guide/saiyo/cat_x1/index.html)
+- [X: @aq_hatarakitai](https://x.com/aq_hatarakitai)
 - [飼育員になるにはナビ](https://keepersnavi.com/)
-- [activo 動物愛護系NPO求人](https://activo.jp/job/animal)
