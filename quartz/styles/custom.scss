@@ -1,3 +1,312 @@
 @use "./base.scss";
 
-// put your custom CSS here!
+// ============================================================
+// Zoo Knowledge Vault - 自然・動物・植物テーマ カスタムCSS
+// ============================================================
+
+// ---- CSS変数（カラーパレット） ----
+:root {
+  --color-forest:    #2d6a4f;
+  --color-sage:      #52796f;
+  --color-mint:      #95d5b2;
+  --color-leaf:      #74c69d;
+  --color-sky:       #a8dadc;
+  --color-earth:     #8b6f47;
+  --color-bark:      #4a3728;
+  --color-cream:     #faf8f5;
+  --color-sand:      #e8e4df;
+  --color-moss:      #40916c;
+}
+
+// ---- ボディ・背景 ----
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  background-color: var(--color-cream);
+
+  // 背景に葉のシルエットパターン（SVGをdata URIで埋め込み）
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cpath d='M60 10 C30 10 10 35 10 60 C10 85 30 100 60 90 C90 100 110 85 110 60 C110 35 90 10 60 10Z' fill='%232d6a4f'/%3E%3Cpath d='M60 10 L60 90' stroke='%232d6a4f' stroke-width='2'/%3E%3Cpath d='M60 30 L80 50 M60 50 L40 65 M60 65 L75 75' stroke='%232d6a4f' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+    background-size: 120px 120px;
+  }
+}
+
+// ---- ヘッダー ----
+header {
+  background: linear-gradient(135deg, var(--color-forest) 0%, var(--color-sage) 60%, var(--color-moss) 100%) !important;
+  border-bottom: 3px solid var(--color-mint);
+  padding: 0.5rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+
+  // ヘッダー内の動物・植物装飾
+  &::after {
+    content: '';
+    position: absolute;
+    right: 20px; bottom: -5px;
+    width: 180px; height: 60px;
+    opacity: 0.18;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 60'%3E%3C!-- 木のシルエット --%3E%3Cellipse cx='30' cy='25' rx='18' ry='22' fill='%23ffffff'/%3E%3Crect x='27' y='45' width='6' height='15' fill='%23ffffff'/%3E%3Cellipse cx='65' cy='20' rx='14' ry='17' fill='%23ffffff'/%3E%3Crect x='62' y='35' width='5' height='20' fill='%23ffffff'/%3E%3C!-- 鳥 --%3E%3Cpath d='M110 18 Q118 12 126 18 Q118 15 110 18Z' fill='%23ffffff'/%3E%3Cpath d='M130 14 Q138 8 146 14 Q138 11 130 14Z' fill='%23ffffff'/%3E%3C!-- 草 --%3E%3Cpath d='M155 55 Q158 40 160 55 M162 55 Q165 38 168 55 M170 55 Q173 42 175 55' stroke='%23ffffff' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .page-title {
+    color: #ffffff !important;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.4rem;
+    letter-spacing: 0.05em;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  }
+}
+
+// ---- サイドバー ----
+#quartz-body .sidebar {
+  background: rgba(250, 248, 245, 0.95);
+  border-right: 1px solid var(--color-sand);
+
+  // サイドバー上部に木のアイコン装飾
+  .sidebar-content {
+    &::before {
+      content: '🌿';
+      display: block;
+      font-size: 1.5rem;
+      text-align: center;
+      margin: 0.5rem 0;
+      opacity: 0.6;
+    }
+  }
+}
+
+// ---- 記事タイトル（h1） ----
+h1 {
+  font-family: 'Noto Serif JP', serif;
+  color: var(--color-forest) !important;
+  border-bottom: 3px solid var(--color-mint);
+  padding-bottom: 0.5rem;
+  position: relative;
+
+  &::before {
+    content: '🌱 ';
+    font-size: 0.85em;
+  }
+}
+
+// ---- 見出し（h2/h3） ----
+h2 {
+  font-family: 'Noto Serif JP', serif;
+  color: var(--color-sage) !important;
+  border-left: 4px solid var(--color-mint);
+  padding-left: 0.75rem;
+  margin-top: 2rem;
+}
+
+h3 {
+  color: var(--color-moss) !important;
+  border-left: 3px solid var(--color-leaf);
+  padding-left: 0.6rem;
+}
+
+// ---- 記事本文 ----
+.popover-hint {
+  article.popover-hint {
+    background: var(--color-cream);
+  }
+}
+
+article {
+  // 段落の行間
+  p { line-height: 1.9; }
+
+  // テーブル
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1.5rem 0;
+
+    th {
+      background: var(--color-forest);
+      color: #ffffff;
+      padding: 0.6rem 1rem;
+      font-weight: 600;
+    }
+
+    td {
+      padding: 0.5rem 1rem;
+      border-bottom: 1px solid var(--color-sand);
+    }
+
+    tr:nth-child(even) td {
+      background: rgba(149, 213, 178, 0.12);
+    }
+
+    tr:hover td {
+      background: rgba(45, 106, 79, 0.08);
+    }
+  }
+
+  // コードブロック
+  pre {
+    background: #1a1e1c !important;
+    border-left: 4px solid var(--color-forest);
+    border-radius: 0 6px 6px 0;
+  }
+
+  // インラインコード
+  code:not(pre code) {
+    background: rgba(45, 106, 79, 0.1);
+    color: var(--color-forest);
+    border-radius: 3px;
+    padding: 0.1em 0.4em;
+  }
+
+  // 引用ブロック
+  blockquote {
+    border-left: 4px solid var(--color-leaf);
+    background: rgba(149, 213, 178, 0.1);
+    padding: 0.8rem 1.2rem;
+    border-radius: 0 6px 6px 0;
+    font-style: italic;
+    color: var(--color-sage);
+  }
+
+  // インフォグラフィック画像
+  img[src*="infographic"] {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(45, 106, 79, 0.2);
+    margin: 1.5rem auto;
+    display: block;
+    border: 2px solid var(--color-mint);
+  }
+}
+
+// ---- タグ ----
+.tag-link, a.tag-link {
+  background: rgba(45, 106, 79, 0.12) !important;
+  color: var(--color-forest) !important;
+  border: 1px solid var(--color-mint) !important;
+  border-radius: 20px;
+  padding: 0.15em 0.7em;
+  font-size: 0.82em;
+  transition: all 0.2s;
+
+  &:hover {
+    background: var(--color-forest) !important;
+    color: #ffffff !important;
+  }
+}
+
+// ---- グラフビュー ----
+.graph {
+  .node circle {
+    fill: var(--color-leaf) !important;
+    stroke: var(--color-forest) !important;
+  }
+  .link {
+    stroke: var(--color-mint) !important;
+  }
+}
+
+// ---- 検索 ----
+#search-bar {
+  border: 2px solid var(--color-mint) !important;
+  border-radius: 8px;
+
+  &:focus {
+    border-color: var(--color-forest) !important;
+    box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.15);
+  }
+}
+
+// ---- フッター ----
+footer {
+  border-top: 2px solid var(--color-mint);
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--color-sage);
+  font-size: 0.85rem;
+  position: relative;
+
+  &::before {
+    content: '🦁 🌿 🦜 🌸 🐢 🌲 🦋 🌾 🐘';
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.3em;
+    opacity: 0.7;
+  }
+}
+
+// ---- リンク ----
+a {
+  color: var(--color-forest) !important;
+  text-decoration-color: var(--color-mint);
+
+  &:hover {
+    color: var(--color-moss) !important;
+    text-decoration-color: var(--color-forest);
+  }
+}
+
+// ---- バックリンク・関連記事パネル ----
+.backlinks {
+  border: 1px solid var(--color-mint);
+  border-radius: 8px;
+  padding: 1rem;
+  background: rgba(149, 213, 178, 0.06);
+
+  h3::before { content: '🔗 '; }
+}
+
+// ---- 目次（TOC） ----
+#toc {
+  border-left: 3px solid var(--color-mint);
+  padding-left: 1rem;
+
+  li a { color: var(--color-sage) !important; }
+  li a:hover { color: var(--color-forest) !important; }
+}
+
+// ---- スクロールバー ----
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-sand);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-mint);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-forest);
+}
+
+// ---- 記事カード（フォルダビュー） ----
+.section-ul {
+  li {
+    border-left: 3px solid var(--color-mint);
+    padding-left: 0.8rem;
+    margin: 0.4rem 0;
+    transition: border-color 0.2s;
+
+    &:hover {
+      border-color: var(--color-forest);
+    }
+  }
+}
+
+// ---- 種別図鑑テーブル（保全ステータス色分け） ----
+td:has(+ td),
+.cr-status { color: #c62828; font-weight: bold; }  // CR危機
+.en-status { color: #e65100; font-weight: bold; }  // EN危惧
+.vu-status { color: #f57f17; font-weight: bold; }  // VU危急
+.nt-status { color: #558b2f; }                     // NT準絶滅
+.lc-status { color: var(--color-forest); }         // LC低懸念
