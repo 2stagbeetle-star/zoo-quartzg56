@@ -13,6 +13,12 @@ author: "Zoo Knowledge Vault"
 draft: false
 ---
 
+## インフォグラフィック
+
+![](_images/動物園_水族館_NPO法人_求人情報まとめ_infographic.svg)
+<img src="/_images/動物園_水族館_NPO法人_求人情報まとめ_infographic.svg" alt="インフォグラフィック" style="max-width:100%;border-radius:8px;" />
+
+
 # 動物園・水族館・NPO法人 求人情報まとめ
 
 > **最終確認日:** 2026-03-29
@@ -205,14 +211,4 @@ draft: false
 
 ## 参考・引用元
 
-- [東京動物園協会 採用情報](https://www.tzps.or.jp/recruit/)
-- [旭川市職員採用](https://www.city.asahikawa.hokkaido.jp/1400/saiyo/index.html)
-- [札幌市円山動物園 職員採用](https://www.city.sapporo.jp/zoo/01sougouannai/09recruit/maruyamazoo_recruit.html)
-- [帯広市 動物園職員募集](https://www.city.obihiro.hokkaido.jp/zoo/1008079/index.html)
-- [天王寺動物園 採用情報](https://www.tennojizoo.jp/recruit/)
-- [WWFジャパン 採用](https://www.wwf.or.jp/recinfo/)
-- [日本自然保護協会 採用](https://www.nacsj.or.jp/recruit/)
-- [野生動物保護管理事務所 採用](https://wmo.co.jp/recruit_page)
-- [環境省 アクティブ・レンジャー](https://www.env.go.jp/guide/saiyo/cat_x1/index.html)
-- [X: @aq_hatarakitai](https://x.com/aq_hatarakitai)
-- [飼育員になるにはナビ](https://keepersnavi.com/)
+- 情報収集中
