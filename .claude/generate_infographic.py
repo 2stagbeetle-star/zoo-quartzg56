@@ -18,7 +18,7 @@ import urllib.request
 import urllib.error
 
 API_KEY = "AIzaSyBc6LExLaesA3ZwDi9RtAfpydsS-hCmv7Y"
-GEMINI_URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={API_KEY}"
+GEMINI_URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemma-3-4b-it:generateContent?key={API_KEY}"
 VAULT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 IMAGES_DIR = os.path.join(VAULT_DIR, "_images")
 

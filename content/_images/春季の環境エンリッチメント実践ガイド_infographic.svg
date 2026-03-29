@@ -1,0 +1,65 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="backgroundGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#faf8f5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e0e0e0;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="forestGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2d6a4f;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#333;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="600" fill="url(#backgroundGradient)" />
+
+  <g transform="translate(100, 100)">
+    <text font-size="40" font-family="sans-serif" fill="#2b2926">春季の環境エンリッチメント実践ガイド</text>
+
+    <g transform="translate(0, 50)">
+      <rect x="50" y="80" width="150" height="80" rx="10" ry="10" fill="#52796f" stroke="#333" stroke-width="2"/>
+      <text font-size="20" font-family="sans-serif" fill="#2b2926">動物の行動欲求を満たす</text>
+    </g>
+
+    <g transform="translate(200, 50)">
+      <rect x="50" y="80" width="150" height="80" rx="10" ry="10" fill="#95d5b2" stroke="#333" stroke-width="2"/>
+      <text font-size="20" font-family="sans-serif" fill="#2b2926">常同行動の抑制</text>
+    </g>
+
+    <g transform="translate(350, 50)">
+      <rect x="50" y="80" width="150" height="80" rx="10" ry="10" fill="#2d6a4f" stroke="#333" stroke-width="2"/>
+      <text font-size="20" font-family="sans-serif" fill="#2b2926">繁殖準備のコンディション維持</text>
+    </g>
+
+    <g transform="translate(0, 150)">
+      <rect x="50" y="80" width="150" height="80" rx="10" ry="10" fill="#52796f" stroke="#333" stroke-width="2"/>
+      <text font-size="20" font-family="sans-serif" fill="#2b2926">準備: 30分〜1時間</text>
+    </g>
+
+    <g transform="translate(200, 150)">
+      <rect x="50" y="80" width="150" height="80" rx="10" ry="10" fill="#95d5b2" stroke="#333" stroke-width="2"/>
+      <text font-size="20" font-family="sans-serif" fill="#2b2926">実施: 10〜30分</text>
+    </g>
+
+    <g transform="translate(350, 150)">
+      <rect x="50" y="80" width="150" height="80" rx="10" ry="10" fill="#2d6a4f" stroke="#333" stroke-width="2"/>
+      <text font-size="20" font-family="sans-serif" fill="#2b2926">対象動物: 哺乳類全般</text>
+    </g>
+  </g>
+
+  <g transform="translate(500, 580)">
+    <text font-size="16" font-family="sans-serif" fill="#2b2926">Zoo Knowledge Vault</text>
+  </g>
+
+  <g transform="translate(50, 50)">
+    <ellipse cx="50" cy="50" rx="30" ry="20" fill="url(#forestGradient)" />
+  </g>
+
+  <g transform="translate(250, 50)">
+    <ellipse cx="250" cy="50" rx="30" ry="20" fill="url(#forestGradient)" />
+  </g>
+
+  <g transform="translate(400, 50)">
+    <ellipse cx="400" cy="50" rx="30" ry="20" fill="url(#forestGradient)" />
+  </g>
+
+</svg>
