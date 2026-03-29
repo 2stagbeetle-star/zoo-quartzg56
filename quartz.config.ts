@@ -2,52 +2,57 @@ import { QuartzConfig } from "./quartz/cfg"
 import * as Plugin from "./quartz/plugins"
 
 /**
- * Quartz 4 Configuration
- *
- * See https://quartz.jzhao.xyz/configuration for more information.
+ * Zoo Knowledge Vault - Quartz4 設定ファイル
+ * 使い方:
+ *   1. このファイルを ~/Documents/zoo-quartz/quartz.config.ts にコピー
+ *   2. baseUrl の YOUR_GITHUB_USERNAME を実際のGitHubユーザー名に変更
+ *   3. npx quartz build --serve でローカル確認
+ *   4. npx quartz sync でデプロイ
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "Quartz 4",
-    pageTitleSuffix: "",
+    pageTitle: "Zoo Knowledge Vault",
     enableSPA: true,
     enablePopovers: true,
-    analytics: {
-      provider: "plausible",
-    },
-    locale: "en-US",
-    baseUrl: "quartz.jzhao.xyz",
-    ignorePatterns: ["private", "templates", ".obsidian"],
+    analytics: null,
+    locale: "ja-JP",
+    baseUrl: "2stagbeetle-star.github.io/zoo-quartzg56",
+    ignorePatterns: [
+      "_drafts",
+      "_templates",
+      ".obsidian",
+      ".claude"
+    ],
     defaultDateType: "modified",
     theme: {
       fontOrigin: "googleFonts",
       cdnCaching: true,
       typography: {
-        header: "Schibsted Grotesk",
-        body: "Source Sans Pro",
+        header: "Noto Serif JP",
+        body: "Noto Sans JP",
         code: "IBM Plex Mono",
       },
       colors: {
         lightMode: {
-          light: "#faf8f8",
-          lightgray: "#e5e5e5",
-          gray: "#b8b8b8",
-          darkgray: "#4e4e4e",
-          dark: "#2b2b2b",
-          secondary: "#284b63",
-          tertiary: "#84a59d",
-          highlight: "rgba(143, 159, 169, 0.15)",
+          light: "#faf8f5",
+          lightgray: "#e8e4df",
+          gray: "#8a8580",
+          darkgray: "#4a4540",
+          dark: "#2b2926",
+          secondary: "#2d6a4f",   // 森林グリーン（メインカラー）
+          tertiary: "#52796f",    // セージグリーン
+          highlight: "rgba(45, 106, 79, 0.12)",
           textHighlight: "#fff23688",
         },
         darkMode: {
-          light: "#161618",
-          lightgray: "#393639",
-          gray: "#646464",
-          darkgray: "#d4d4d4",
-          dark: "#ebebec",
-          secondary: "#7b97aa",
-          tertiary: "#84a59d",
-          highlight: "rgba(143, 159, 169, 0.15)",
+          light: "#1a1e1c",
+          lightgray: "#2d3330",
+          gray: "#6b7d75",
+          darkgray: "#c8d5cf",
+          dark: "#e8f0ec",
+          secondary: "#74c69d",
+          tertiary: "#95d5b2",
+          highlight: "rgba(116, 198, 157, 0.12)",
           textHighlight: "#b3aa0288",
         },
       },
@@ -56,16 +61,8 @@ const config: QuartzConfig = {
   plugins: {
     transformers: [
       Plugin.FrontMatter(),
-      Plugin.CreatedModifiedDate({
-        priority: ["frontmatter", "git", "filesystem"],
-      }),
-      Plugin.SyntaxHighlighting({
-        theme: {
-          light: "github-light",
-          dark: "github-dark",
-        },
-        keepBackground: false,
-      }),
+      Plugin.CreatedModifiedDate({ priority: ["frontmatter", "filesystem"] }),
+      Plugin.SyntaxHighlighting(),
       Plugin.ObsidianFlavoredMarkdown({ enableInHtmlEmbed: false }),
       Plugin.GitHubFlavoredMarkdown(),
       Plugin.TableOfContents(),
@@ -86,10 +83,7 @@ const config: QuartzConfig = {
       }),
       Plugin.Assets(),
       Plugin.Static(),
-      Plugin.Favicon(),
       Plugin.NotFoundPage(),
-      // Comment out CustomOgImages to speed up build time
-      Plugin.CustomOgImages(),
     ],
   },
 }
