@@ -61,6 +61,8 @@ export interface Translation {
     }
     contentMeta: {
       readingTime: (variables: { minutes: number }) => string
+      lastUpdated: string
+      published: string
     }
   }
   pages: {

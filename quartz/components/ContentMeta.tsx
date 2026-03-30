@@ -30,7 +30,10 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
       const segments: (string | JSX.Element)[] = []
 
       if (fileData.dates) {
-        segments.push(<Date date={getDate(cfg, fileData)!} locale={cfg.locale} />)
+        const label = cfg.defaultDateType === "modified"
+          ? i18n(cfg.locale).components.contentMeta.lastUpdated
+          : i18n(cfg.locale).components.contentMeta.published
+        segments.push(<span>{label}: <Date date={getDate(cfg, fileData)!} locale={cfg.locale} /></span>)
       }
 
       // Display reading time if enabled

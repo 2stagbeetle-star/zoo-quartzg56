@@ -9,14 +9,14 @@ export const sharedPageComponents: SharedLayout = {
   footer: Component.Footer({
     links: {
       GitHub: "https://github.com/2stagbeetle-star/zoo-quartzg56",
-      "Zoo Knowledge Vault": "https://2stagbeetle-star.github.io/zoo-quartzg56/",
+      "このサイトについて": "https://2stagbeetle-star.github.io/zoo-quartzg56/",
     },
   }),
 }
 
 // Explorer の共通オプション（番号除去 + 日本語タイトル）
 const explorerOpts = {
-  title: "カテゴリから探す",
+  title: "カテゴリ一覧",
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   mapFn: (node: any) => {
     node.displayName = node.displayName.replace(/^\d+_/, "")

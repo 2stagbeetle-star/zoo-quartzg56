@@ -33,10 +33,10 @@ export default {
       title: "リーダーモード",
     },
     explorer: {
-      title: "カテゴリから探す",
+      title: "カテゴリ一覧",
     },
     footer: {
-      createdWith: "作成",
+      createdWith: "開発",
     },
     graph: {
       title: "関連テーマ",
@@ -58,6 +58,8 @@ export default {
     },
     contentMeta: {
       readingTime: ({ minutes }) => `約${minutes}分で読めます`,
+      lastUpdated: "最終更新",
+      published: "公開日",
     },
   },
   pages: {
@@ -76,7 +78,7 @@ export default {
     },
     tagContent: {
       tag: "タグ",
-      tagIndex: "タグ一覧",
+      tagIndex: "人気タグ",
       itemsUnderTag: ({ count }) => `${count}件の記事`,
       showingFirst: ({ count }) => `のうち最初の${count}件を表示`,
       totalTags: ({ count }) => `全${count}個のタグ`,

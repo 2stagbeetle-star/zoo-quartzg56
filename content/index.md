@@ -11,8 +11,8 @@ draft: false
 <div class="zoo-hero">
   <div class="zoo-hero-tagline">🌿 動物・自然・生き物の知識ネットワーク</div>
   <h1 class="zoo-hero-title">Zoo Knowledge Vault</h1>
-  <p class="zoo-hero-desc">動物園や水族館などの生物や自然の記事を掲載しているWebサイトです。<br>
-  飼育、展示、繁殖、保全、研究などの幅広いテーマを、分かりやすく整理して発信します。</p>
+  <p class="zoo-hero-desc">動物園や水族館、生きものや自然に関する記事を掲載しているサイトです。<br>
+  生物の魅力や飼食の工夫、保全や研究の情報を、見やすくまとめて発信します。</p>
   <div class="zoo-hero-buttons">
     <a href="15_動物園学・博物館学" class="zoo-btn zoo-btn-primary">🦁 記事を見る</a>
     <a href="18_学術論文・研究" class="zoo-btn zoo-btn-secondary">📚 論文・研究</a>
