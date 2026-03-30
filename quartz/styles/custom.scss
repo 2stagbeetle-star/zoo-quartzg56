@@ -436,71 +436,221 @@ td:has(+ td),
 // ---- カテゴリグリッド ----
 .zoo-category-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+  gap: 1.1rem;
   margin: 1.5rem 0 2.5rem 0;
-
-  // アニメーション: 各カードに遅延
-  > a:nth-child(1)  { animation: fadeInUp 0.4s ease-out 0.05s both; }
-  > a:nth-child(2)  { animation: fadeInUp 0.4s ease-out 0.10s both; }
-  > a:nth-child(3)  { animation: fadeInUp 0.4s ease-out 0.15s both; }
-  > a:nth-child(4)  { animation: fadeInUp 0.4s ease-out 0.20s both; }
-  > a:nth-child(5)  { animation: fadeInUp 0.4s ease-out 0.25s both; }
-  > a:nth-child(6)  { animation: fadeInUp 0.4s ease-out 0.30s both; }
-  > a:nth-child(7)  { animation: fadeInUp 0.4s ease-out 0.35s both; }
-  > a:nth-child(8)  { animation: fadeInUp 0.4s ease-out 0.40s both; }
-  > a:nth-child(9)  { animation: fadeInUp 0.4s ease-out 0.45s both; }
-  > a:nth-child(10) { animation: fadeInUp 0.4s ease-out 0.50s both; }
-  > a:nth-child(n+11) { animation: fadeInUp 0.4s ease-out 0.55s both; }
 }
 
+// ---- カテゴリカード（写真ヘッダー型） ----
 .zoo-category-card {
   display: flex;
-  align-items: flex-start;
-  gap: 0.8rem;
+  flex-direction: column;
   background: #ffffff;
-  border: 1px solid var(--color-sand);
-  border-radius: 10px;
-  padding: 1rem 1.1rem;
+  border-radius: 12px;
   text-decoration: none !important;
   color: var(--color-dark) !important;
-  transition: all 0.22s ease;
-  box-shadow: 0 1px 4px rgba(45,106,79,0.07);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  box-shadow: 0 2px 8px rgba(45,106,79,0.09);
+  overflow: hidden;
+  border: 1px solid var(--color-sand);
+  opacity: 0;
+
+  &.visible {
+    opacity: 1;
+    animation: cardReveal 0.5s ease-out;
+  }
 
   &:hover {
-    border-color: var(--color-mint);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(45,106,79,0.15);
-    color: var(--color-dark) !important;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 28px rgba(45,106,79,0.18);
     text-decoration: none !important;
+    color: var(--color-dark) !important;
 
-    .zoo-cat-icon {
-      transform: scale(1.15);
+    .zoo-cat-emoji {
+      transform: scale(1.2) rotate(-5deg);
     }
   }
 
-  .zoo-cat-icon {
-    font-size: 1.8rem;
-    line-height: 1;
-    flex-shrink: 0;
-    transition: transform 0.2s ease;
+  .zoo-cat-photo {
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #2d6a4f, #52796f);
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 140px; height: 140px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.07);
+      top: -30px; right: -30px;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.05);
+      bottom: -15px; left: -15px;
+    }
+
+    .zoo-cat-emoji {
+      font-size: 2.6rem;
+      line-height: 1;
+      z-index: 1;
+      transition: transform 0.22s ease;
+      filter: drop-shadow(0 2px 6px rgba(0,0,0,0.25));
+    }
   }
 
   .zoo-cat-body {
+    padding: 0.75rem 0.9rem 0.85rem;
+
     h3 {
       font-family: 'Noto Serif JP', serif;
-      font-size: 0.95rem;
+      font-size: 0.88rem;
       color: var(--color-forest) !important;
       border-left: none !important;
       padding-left: 0 !important;
       margin: 0 0 0.2rem 0;
+      line-height: 1.3;
     }
 
     p {
-      font-size: 0.8rem;
+      font-size: 0.76rem;
       color: var(--color-sage);
       margin: 0;
-      line-height: 1.5;
+      line-height: 1.45;
+    }
+  }
+}
+
+@keyframes cardReveal {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+// ---- カテゴリ別グラデーション ----
+.zoo-category-card[data-cat="diary"]    .zoo-cat-photo,
+.zoo-recent-article[data-cat="diary"]   .zoo-recent-photo { background: linear-gradient(135deg, #8b4513, #c4783c); }
+.zoo-category-card[data-cat="season"]   .zoo-cat-photo,
+.zoo-recent-article[data-cat="season"]  .zoo-recent-photo { background: linear-gradient(135deg, #b83c6b, #e07390); }
+.zoo-category-card[data-cat="howto"]    .zoo-cat-photo,
+.zoo-recent-article[data-cat="howto"]   .zoo-recent-photo { background: linear-gradient(135deg, #2d6a4f, #52796f); }
+.zoo-category-card[data-cat="news"]     .zoo-cat-photo,
+.zoo-recent-article[data-cat="news"]    .zoo-recent-photo { background: linear-gradient(135deg, #1565c0, #2196f3); }
+.zoo-category-card[data-cat="guide"]    .zoo-cat-photo,
+.zoo-recent-article[data-cat="guide"]   .zoo-recent-photo { background: linear-gradient(135deg, #e65100, #f57c00); }
+.zoo-category-card[data-cat="nature"]   .zoo-cat-photo,
+.zoo-recent-article[data-cat="nature"]  .zoo-recent-photo { background: linear-gradient(135deg, #1b5e20, #388e3c); }
+.zoo-category-card[data-cat="aquarium"] .zoo-cat-photo,
+.zoo-recent-article[data-cat="aquarium"] .zoo-recent-photo { background: linear-gradient(135deg, #006064, #0097a7); }
+.zoo-category-card[data-cat="protect"]  .zoo-cat-photo,
+.zoo-recent-article[data-cat="protect"] .zoo-recent-photo { background: linear-gradient(135deg, #1a3720, #2e6b3e); }
+.zoo-category-card[data-cat="vet"]      .zoo-cat-photo,
+.zoo-recent-article[data-cat="vet"]     .zoo-recent-photo { background: linear-gradient(135deg, #0d47a1, #1976d2); }
+.zoo-category-card[data-cat="bio"]      .zoo-cat-photo,
+.zoo-recent-article[data-cat="bio"]     .zoo-recent-photo { background: linear-gradient(135deg, #4a148c, #7b1fa2); }
+.zoo-category-card[data-cat="ecology"]  .zoo-cat-photo,
+.zoo-recent-article[data-cat="ecology"] .zoo-recent-photo { background: linear-gradient(135deg, #1e5631, #2e7d32); }
+.zoo-category-card[data-cat="plants"]   .zoo-cat-photo,
+.zoo-recent-article[data-cat="plants"]  .zoo-recent-photo { background: linear-gradient(135deg, #33691e, #558b2f); }
+.zoo-category-card[data-cat="taxon"]    .zoo-cat-photo,
+.zoo-recent-article[data-cat="taxon"]   .zoo-recent-photo { background: linear-gradient(135deg, #bf360c, #e64a19); }
+.zoo-category-card[data-cat="climate"]  .zoo-cat-photo,
+.zoo-recent-article[data-cat="climate"] .zoo-recent-photo { background: linear-gradient(135deg, #01579b, #0288d1); }
+.zoo-category-card[data-cat="zoo"]      .zoo-cat-photo,
+.zoo-recent-article[data-cat="zoo"]     .zoo-recent-photo { background: linear-gradient(135deg, #1b4332, #40916c); }
+.zoo-category-card[data-cat="jobs"]     .zoo-cat-photo,
+.zoo-recent-article[data-cat="jobs"]    .zoo-recent-photo { background: linear-gradient(135deg, #7f3f00, #cc7400); }
+.zoo-category-card[data-cat="research"] .zoo-cat-photo,
+.zoo-recent-article[data-cat="research"] .zoo-recent-photo { background: linear-gradient(135deg, #1a237e, #283593); }
+
+// ---- 新着記事グリッド ----
+.zoo-recent-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.1rem;
+  margin: 1.5rem 0 2.5rem 0;
+}
+
+.zoo-recent-article {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid var(--color-sand);
+  box-shadow: 0 2px 8px rgba(45,106,79,0.08);
+  text-decoration: none !important;
+  color: var(--color-dark) !important;
+  overflow: hidden;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  opacity: 0;
+
+  &.visible {
+    opacity: 1;
+    animation: cardReveal 0.5s ease-out;
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 28px rgba(45,106,79,0.18);
+    text-decoration: none !important;
+    color: var(--color-dark) !important;
+  }
+
+  .zoo-recent-photo {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #2d6a4f, #52796f);
+    font-size: 2.2rem;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100px; height: 100px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.07);
+      top: -20px; right: -20px;
+    }
+
+    span {
+      z-index: 1;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+    }
+  }
+
+  .zoo-recent-body {
+    padding: 0.8rem 0.95rem 0.9rem;
+
+    .zoo-recent-date {
+      display: block;
+      font-size: 0.73rem;
+      color: var(--color-sage);
+      margin-bottom: 0.3rem;
+    }
+
+    h3 {
+      font-size: 0.88rem;
+      color: var(--color-forest) !important;
+      border-left: none !important;
+      padding-left: 0 !important;
+      margin: 0 0 0.25rem 0;
+      line-height: 1.35;
+    }
+
+    p {
+      font-size: 0.76rem;
+      color: var(--color-sage);
+      margin: 0;
+      line-height: 1.4;
     }
   }
 }
@@ -545,7 +695,8 @@ td:has(+ td),
 
 // ---- ダークモード対応 ----
 [saved-theme="dark"] {
-  .zoo-category-card {
+  .zoo-category-card,
+  .zoo-recent-article {
     background: var(--color-lightgray);
     border-color: var(--color-gray);
   }

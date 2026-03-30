@@ -19,39 +19,108 @@ draft: false
   </div>
 </div>
 
+<h2 class="zoo-section-heading">新着記事</h2>
+
+<div class="zoo-recent-grid">
+  <a href="13_生物分類図鑑/哺乳類/ネコ科動物の分類と飼育保全" class="zoo-recent-article" data-cat="taxon">
+    <div class="zoo-recent-photo"><span>🐈</span></div>
+    <div class="zoo-recent-body">
+      <span class="zoo-recent-date">2026年3月29日</span>
+      <h3>ネコ科動物の分類と飼育・保全</h3>
+      <p>37種の系統分類・チーター繁殖・ツシマヤマネコ保全</p>
+    </div>
+  </a>
+  <a href="14_環境問題・気候変動/気候変動/気候変動が野生生物に与える影響" class="zoo-recent-article" data-cat="climate">
+    <div class="zoo-recent-photo"><span>🌍</span></div>
+    <div class="zoo-recent-body">
+      <span class="zoo-recent-date">2026年3月28日</span>
+      <h3>気候変動が野生生物に与える影響</h3>
+      <p>分布域変化・フェノロジーミスマッチ・感染症拡大</p>
+    </div>
+  </a>
+  <a href="12_植物学・植生/動物園植栽/動物園の植栽設計と動物福祉" class="zoo-recent-article" data-cat="plants">
+    <div class="zoo-recent-photo"><span>🌿</span></div>
+    <div class="zoo-recent-body">
+      <span class="zoo-recent-date">2026年3月27日</span>
+      <h3>動物園の植栽設計と動物福祉</h3>
+      <p>採食エンリッチメント・視覚的プライバシー・生息域再現</p>
+    </div>
+  </a>
+  <a href="11_生態学・自然環境学/里山/里山生態系と生物多様性保全" class="zoo-recent-article" data-cat="ecology">
+    <div class="zoo-recent-photo"><span>🌾</span></div>
+    <div class="zoo-recent-body">
+      <span class="zoo-recent-date">2026年3月26日</span>
+      <h3>里山生態系と生物多様性保全</h3>
+      <p>二次的自然・SATOYAMA Initiative・外来種問題</p>
+    </div>
+  </a>
+  <a href="09_獣医学・動物医療/麻酔・外科/野生動物の麻酔管理と安全対策" class="zoo-recent-article" data-cat="vet">
+    <div class="zoo-recent-photo"><span>🩺</span></div>
+    <div class="zoo-recent-body">
+      <span class="zoo-recent-date">2026年3月25日</span>
+      <h3>野生動物の麻酔管理と安全対策</h3>
+      <p>キャプチャーミオパシー・主要薬剤・安全チェックリスト</p>
+    </div>
+  </a>
+  <a href="07_水族館・水生生物/サンゴ礁/サンゴ礁保全と水族館の役割" class="zoo-recent-article" data-cat="aquarium">
+    <div class="zoo-recent-photo"><span>🪸</span></div>
+    <div class="zoo-recent-body">
+      <span class="zoo-recent-date">2026年3月24日</span>
+      <h3>サンゴ礁保全と水族館の役割</h3>
+      <p>白化現象・水族館での繁殖・海洋保護区との連携</p>
+    </div>
+  </a>
+  <a href="02_季節トピック/春季/春の繁殖シーズンと飼育管理のポイント" class="zoo-recent-article" data-cat="season">
+    <div class="zoo-recent-photo"><span>🌸</span></div>
+    <div class="zoo-recent-body">
+      <span class="zoo-recent-date">2026年3月23日</span>
+      <h3>春の繁殖シーズンと飼育管理のポイント</h3>
+      <p>繁殖行動の観察・巣材提供・ストレス管理</p>
+    </div>
+  </a>
+  <a href="15_動物園学・博物館学/繁殖・保全/動物園の繁殖と保全の役割" class="zoo-recent-article" data-cat="zoo">
+    <div class="zoo-recent-photo"><span>🦁</span></div>
+    <div class="zoo-recent-body">
+      <span class="zoo-recent-date">2026年3月30日</span>
+      <h3>動物園の繁殖と保全の役割</h3>
+      <p>JAZA・WAZA・ズーストック計画・遺伝的多様性の維持</p>
+    </div>
+  </a>
+</div>
+
 <h2 class="zoo-section-heading">注目カテゴリ</h2>
 
 <div class="zoo-category-grid">
-  <a href="01_飼育日誌" class="zoo-category-card">
-    <div class="zoo-cat-icon">📋</div>
+  <a href="01_飼育日誌" class="zoo-category-card" data-cat="diary">
+    <div class="zoo-cat-photo"><span class="zoo-cat-emoji">📋</span></div>
     <div class="zoo-cat-body"><h3>飼育日誌</h3><p>現場の飼育観察・記録ベースの記事</p></div>
   </a>
-  <a href="03_飼育ノウハウ" class="zoo-category-card">
-    <div class="zoo-cat-icon">🔧</div>
+  <a href="03_飼育ノウハウ" class="zoo-category-card" data-cat="howto">
+    <div class="zoo-cat-photo"><span class="zoo-cat-emoji">🔧</span></div>
     <div class="zoo-cat-body"><h3>飼育ノウハウ</h3><p>エンリッチメント・管理技術・安全対策</p></div>
   </a>
-  <a href="07_水族館・水生生物" class="zoo-category-card">
-    <div class="zoo-cat-icon">🌊</div>
+  <a href="07_水族館・水生生物" class="zoo-category-card" data-cat="aquarium">
+    <div class="zoo-cat-photo"><span class="zoo-cat-emoji">🌊</span></div>
     <div class="zoo-cat-body"><h3>水族館・水生生物</h3><p>水槽管理・海水魚・サンゴ礁・海洋生物</p></div>
   </a>
-  <a href="08_動物保護・保全生物学" class="zoo-category-card">
-    <div class="zoo-cat-icon">🛡️</div>
+  <a href="08_動物保護・保全生物学" class="zoo-category-card" data-cat="protect">
+    <div class="zoo-cat-photo"><span class="zoo-cat-emoji">🛡️</span></div>
     <div class="zoo-cat-body"><h3>動物保護・保全生物学</h3><p>絶滅危惧種・野生復帰・個体群管理</p></div>
   </a>
-  <a href="09_獣医学・動物医療" class="zoo-category-card">
-    <div class="zoo-cat-icon">🩺</div>
+  <a href="09_獣医学・動物医療" class="zoo-category-card" data-cat="vet">
+    <div class="zoo-cat-photo"><span class="zoo-cat-emoji">🩺</span></div>
     <div class="zoo-cat-body"><h3>獣医学・動物医療</h3><p>診断・感染症・外科・栄養管理</p></div>
   </a>
-  <a href="15_動物園学・博物館学" class="zoo-category-card">
-    <div class="zoo-cat-icon">🏛️</div>
+  <a href="15_動物園学・博物館学" class="zoo-category-card" data-cat="zoo">
+    <div class="zoo-cat-photo"><span class="zoo-cat-emoji">🏛️</span></div>
     <div class="zoo-cat-body"><h3>動物園学・博物館学</h3><p>展示設計・来園者教育・WAZA/JAZA</p></div>
   </a>
-  <a href="17_求人情報" class="zoo-category-card">
-    <div class="zoo-cat-icon">💼</div>
+  <a href="17_求人情報" class="zoo-category-card" data-cat="jobs">
+    <div class="zoo-cat-photo"><span class="zoo-cat-emoji">💼</span></div>
     <div class="zoo-cat-body"><h3>求人・キャリア情報</h3><p>動物園・水族館・NPO・研究機関の採用</p></div>
   </a>
-  <a href="18_学術論文・研究" class="zoo-category-card">
-    <div class="zoo-cat-icon">📘</div>
+  <a href="18_学術論文・研究" class="zoo-category-card" data-cat="research">
+    <div class="zoo-cat-photo"><span class="zoo-cat-emoji">📘</span></div>
     <div class="zoo-cat-body"><h3>学術論文・研究</h3><p>国内外の最新論文（英語原文＋日本語要約）</p></div>
   </a>
 </div>
@@ -59,44 +128,44 @@ draft: false
 <h2 class="zoo-section-heading">全カテゴリ一覧</h2>
 
 <div class="zoo-category-grid">
-  <a href="02_季節トピック" class="zoo-category-card">
-    <div class="zoo-cat-icon">🌸</div>
+  <a href="02_季節トピック" class="zoo-category-card" data-cat="season">
+    <div class="zoo-cat-photo"><span class="zoo-cat-emoji">🌸</span></div>
     <div class="zoo-cat-body"><h3>季節トピック</h3><p>季節ごとの生き物・管理の注意点</p></div>
   </a>
-  <a href="04_生態系ニュース" class="zoo-category-card">
-    <div class="zoo-cat-icon">📰</div>
+  <a href="04_生態系ニュース" class="zoo-category-card" data-cat="news">
+    <div class="zoo-cat-photo"><span class="zoo-cat-emoji">📰</span></div>
     <div class="zoo-cat-body"><h3>生態系ニュース</h3><p>環境・保全・生態系の最新ニュース解説</p></div>
   </a>
-  <a href="05_種別図鑑" class="zoo-category-card">
-    <div class="zoo-cat-icon">🐾</div>
+  <a href="05_種別図鑑" class="zoo-category-card" data-cat="guide">
+    <div class="zoo-cat-photo"><span class="zoo-cat-emoji">🐾</span></div>
     <div class="zoo-cat-body"><h3>種別図鑑</h3><p>動物種ごとのリファレンス情報</p></div>
   </a>
-  <a href="06_自然環境" class="zoo-category-card">
-    <div class="zoo-cat-icon">🌲</div>
+  <a href="06_自然環境" class="zoo-category-card" data-cat="nature">
+    <div class="zoo-cat-photo"><span class="zoo-cat-emoji">🌲</span></div>
     <div class="zoo-cat-body"><h3>自然環境</h3><p>生息地・生態系・フィールドワークのヒント</p></div>
   </a>
-  <a href="10_生物学・生命科学" class="zoo-category-card">
-    <div class="zoo-cat-icon">🧬</div>
+  <a href="10_生物学・生命科学" class="zoo-category-card" data-cat="bio">
+    <div class="zoo-cat-photo"><span class="zoo-cat-emoji">🧬</span></div>
     <div class="zoo-cat-body"><h3>生物学・生命科学</h3><p>行動学・進化・遺伝・神経科学</p></div>
   </a>
-  <a href="11_生態学・自然環境学" class="zoo-category-card">
-    <div class="zoo-cat-icon">🌿</div>
+  <a href="11_生態学・自然環境学" class="zoo-category-card" data-cat="ecology">
+    <div class="zoo-cat-photo"><span class="zoo-cat-emoji">🌿</span></div>
     <div class="zoo-cat-body"><h3>生態学・自然環境学</h3><p>生態系サービス・食物連鎖・景観生態</p></div>
   </a>
-  <a href="12_植物学・植生" class="zoo-category-card">
-    <div class="zoo-cat-icon">🌱</div>
+  <a href="12_植物学・植生" class="zoo-category-card" data-cat="plants">
+    <div class="zoo-cat-photo"><span class="zoo-cat-emoji">🌱</span></div>
     <div class="zoo-cat-body"><h3>植物学・植生</h3><p>熱帯植物・薬用植物・動植物相互作用</p></div>
   </a>
-  <a href="13_生物分類図鑑" class="zoo-category-card">
-    <div class="zoo-cat-icon">🦎</div>
+  <a href="13_生物分類図鑑" class="zoo-category-card" data-cat="taxon">
+    <div class="zoo-cat-photo"><span class="zoo-cat-emoji">🦎</span></div>
     <div class="zoo-cat-body"><h3>生物分類図鑑</h3><p>哺乳類・鳥類・爬虫類・無脊椎動物など詳細図鑑</p></div>
   </a>
-  <a href="14_環境問題・気候変動" class="zoo-category-card">
-    <div class="zoo-cat-icon">🌍</div>
+  <a href="14_環境問題・気候変動" class="zoo-category-card" data-cat="climate">
+    <div class="zoo-cat-photo"><span class="zoo-cat-emoji">🌍</span></div>
     <div class="zoo-cat-body"><h3>環境問題・気候変動</h3><p>生物多様性損失・海洋酸性化・外来種</p></div>
   </a>
-  <a href="16_フィールドワーク・調査手法" class="zoo-category-card">
-    <div class="zoo-cat-icon">🔭</div>
+  <a href="16_フィールドワーク・調査手法" class="zoo-category-card" data-cat="nature">
+    <div class="zoo-cat-photo"><span class="zoo-cat-emoji">🔭</span></div>
     <div class="zoo-cat-body"><h3>フィールドワーク・調査手法</h3><p>環境DNA・カメラトラップ・市民科学</p></div>
   </a>
 </div>
@@ -128,3 +197,28 @@ draft: false
 **掲載テーマ:** 飼育管理・環境エンリッチメント・繁殖と保全・獣医学・生態学・生物分類・環境問題・フィールドワーク・求人情報・学術論文
 
 > 記事のご意見・情報提供は [GitHub](https://github.com/2stagbeetle-star/zoo-quartzg56) まで。
+
+<script>
+(function () {
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  function init() {
+    document.querySelectorAll('.zoo-category-card, .zoo-recent-article').forEach(function (el) {
+      io.observe(el);
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
