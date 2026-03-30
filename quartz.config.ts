@@ -36,9 +36,9 @@ const config: QuartzConfig = {
         lightMode: {
           light: "#faf8f5",
           lightgray: "#e8e4df",
-          gray: "#8a8580",
-          darkgray: "#4a4540",
-          dark: "#2b2926",
+          gray: "#5c5c5c",
+          darkgray: "#222222",
+          dark: "#0a0a0a",
           secondary: "#2d6a4f",   // 森林グリーン（メインカラー）
           tertiary: "#52796f",    // セージグリーン
           highlight: "rgba(45, 106, 79, 0.12)",
@@ -47,9 +47,9 @@ const config: QuartzConfig = {
         darkMode: {
           light: "#1a1e1c",
           lightgray: "#2d3330",
-          gray: "#6b7d75",
-          darkgray: "#c8d5cf",
-          dark: "#e8f0ec",
+          gray: "#a0a0a0",
+          darkgray: "#e0e0e0",
+          dark: "#ffffff",
           secondary: "#74c69d",
           tertiary: "#95d5b2",
           highlight: "rgba(116, 198, 157, 0.12)",
