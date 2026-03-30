@@ -22,8 +22,8 @@ export default {
       quote: "引用",
     },
     backlinks: {
-      title: "バックリンク",
-      noBacklinksFound: "バックリンクはありません",
+      title: "関連記事",
+      noBacklinksFound: "関連記事はありません",
     },
     themeToggle: {
       lightMode: "ライトモード",
@@ -33,16 +33,16 @@ export default {
       title: "リーダーモード",
     },
     explorer: {
-      title: "エクスプローラー",
+      title: "カテゴリから探す",
     },
     footer: {
       createdWith: "作成",
     },
     graph: {
-      title: "グラフビュー",
+      title: "関連テーマ",
     },
     recentNotes: {
-      title: "最近の記事",
+      title: "新着記事",
       seeRemainingMore: ({ remaining }) => `さらに${remaining}件 →`,
     },
     transcludes: {
@@ -51,35 +51,35 @@ export default {
     },
     search: {
       title: "検索",
-      searchBarPlaceholder: "検索ワードを入力",
+      searchBarPlaceholder: "記事・キーワードを検索",
     },
     tableOfContents: {
       title: "目次",
     },
     contentMeta: {
-      readingTime: ({ minutes }) => `${minutes} min read`,
+      readingTime: ({ minutes }) => `約${minutes}分で読めます`,
     },
   },
   pages: {
     rss: {
-      recentNotes: "最近の記事",
+      recentNotes: "新着記事",
       lastFewNotes: ({ count }) => `最新の${count}件`,
     },
     error: {
-      title: "Not Found",
+      title: "ページが見つかりません",
       notFound: "ページが存在しないか、非公開設定になっています。",
-      home: "ホームページに戻る",
+      home: "ホームに戻る",
     },
     folderContent: {
-      folder: "フォルダ",
-      itemsUnderFolder: ({ count }) => `${count}件のページ`,
+      folder: "カテゴリ",
+      itemsUnderFolder: ({ count }) => `${count}件の記事`,
     },
     tagContent: {
       tag: "タグ",
       tagIndex: "タグ一覧",
-      itemsUnderTag: ({ count }) => `${count}件のページ`,
-      showingFirst: ({ count }) => `のうち最初の${count}件を表示しています`,
-      totalTags: ({ count }) => `全${count}個のタグを表示中`,
+      itemsUnderTag: ({ count }) => `${count}件の記事`,
+      showingFirst: ({ count }) => `のうち最初の${count}件を表示`,
+      totalTags: ({ count }) => `全${count}個のタグ`,
     },
   },
 } as const satisfies Translation

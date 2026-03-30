@@ -310,3 +310,247 @@ td:has(+ td),
 .vu-status { color: #f57f17; font-weight: bold; }  // VU危急
 .nt-status { color: #558b2f; }                     // NT準絶滅
 .lc-status { color: var(--color-forest); }         // LC低懸念
+
+// ============================================================
+// Zoo Knowledge Vault - フェードイン・カードUI・ヒーローセクション
+// ============================================================
+
+// ---- フェードイン キーフレーム ----
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+// ---- ページ全体フェードイン ----
+.center {
+  animation: fadeInUp 0.45s ease-out both;
+}
+
+.left-sidebar {
+  animation: fadeIn 0.5s ease-out 0.1s both;
+}
+
+.right-sidebar {
+  animation: fadeIn 0.5s ease-out 0.2s both;
+}
+
+// ---- ヒーローセクション ----
+.zoo-hero {
+  background: linear-gradient(135deg, #2d6a4f 0%, #40916c 40%, #52796f 80%, #a8dadc 100%);
+  border-radius: 12px;
+  padding: 3rem 2.5rem;
+  margin: 0 0 2.5rem 0;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 0.5s ease-out;
+
+  &::before {
+    content: '🌿 🦁 🌊 🦜 🌲 🐘 🐠 🦋';
+    position: absolute;
+    top: 10px;
+    right: 16px;
+    font-size: 1.2rem;
+    letter-spacing: 0.2em;
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
+  .zoo-hero-tagline {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 0.6rem;
+    letter-spacing: 0.05em;
+  }
+
+  .zoo-hero-title {
+    color: #ffffff !important;
+    border-bottom: none !important;
+    font-size: 2rem;
+    margin: 0 0 0.8rem 0;
+    padding-bottom: 0;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+
+    &::before { content: '' !important; }
+  }
+
+  .zoo-hero-desc {
+    color: rgba(255,255,255,0.92);
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    max-width: 600px;
+  }
+
+  .zoo-hero-buttons {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+  }
+}
+
+// ---- ボタン ----
+.zoo-btn {
+  display: inline-block;
+  padding: 0.65rem 1.4rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+  cursor: pointer;
+
+  &.zoo-btn-primary {
+    background: #ffffff;
+    color: #2d6a4f !important;
+
+    &:hover {
+      background: #f0faf4;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+  }
+
+  &.zoo-btn-secondary {
+    background: rgba(255,255,255,0.2);
+    color: #ffffff !important;
+    border: 1px solid rgba(255,255,255,0.5);
+
+    &:hover {
+      background: rgba(255,255,255,0.35);
+      transform: translateY(-2px);
+    }
+  }
+}
+
+// ---- カテゴリグリッド ----
+.zoo-category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 2.5rem 0;
+
+  // アニメーション: 各カードに遅延
+  > a:nth-child(1)  { animation: fadeInUp 0.4s ease-out 0.05s both; }
+  > a:nth-child(2)  { animation: fadeInUp 0.4s ease-out 0.10s both; }
+  > a:nth-child(3)  { animation: fadeInUp 0.4s ease-out 0.15s both; }
+  > a:nth-child(4)  { animation: fadeInUp 0.4s ease-out 0.20s both; }
+  > a:nth-child(5)  { animation: fadeInUp 0.4s ease-out 0.25s both; }
+  > a:nth-child(6)  { animation: fadeInUp 0.4s ease-out 0.30s both; }
+  > a:nth-child(7)  { animation: fadeInUp 0.4s ease-out 0.35s both; }
+  > a:nth-child(8)  { animation: fadeInUp 0.4s ease-out 0.40s both; }
+  > a:nth-child(9)  { animation: fadeInUp 0.4s ease-out 0.45s both; }
+  > a:nth-child(10) { animation: fadeInUp 0.4s ease-out 0.50s both; }
+  > a:nth-child(n+11) { animation: fadeInUp 0.4s ease-out 0.55s both; }
+}
+
+.zoo-category-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  background: #ffffff;
+  border: 1px solid var(--color-sand);
+  border-radius: 10px;
+  padding: 1rem 1.1rem;
+  text-decoration: none !important;
+  color: var(--color-dark) !important;
+  transition: all 0.22s ease;
+  box-shadow: 0 1px 4px rgba(45,106,79,0.07);
+
+  &:hover {
+    border-color: var(--color-mint);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(45,106,79,0.15);
+    color: var(--color-dark) !important;
+    text-decoration: none !important;
+
+    .zoo-cat-icon {
+      transform: scale(1.15);
+    }
+  }
+
+  .zoo-cat-icon {
+    font-size: 1.8rem;
+    line-height: 1;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+  }
+
+  .zoo-cat-body {
+    h3 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 0.95rem;
+      color: var(--color-forest) !important;
+      border-left: none !important;
+      padding-left: 0 !important;
+      margin: 0 0 0.2rem 0;
+    }
+
+    p {
+      font-size: 0.8rem;
+      color: var(--color-sage);
+      margin: 0;
+      line-height: 1.5;
+    }
+  }
+}
+
+// ---- タグクラウド ----
+.zoo-tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0 2rem 0;
+
+  a {
+    background: rgba(45, 106, 79, 0.1) !important;
+    color: var(--color-forest) !important;
+    border: 1px solid var(--color-mint) !important;
+    border-radius: 20px;
+    padding: 0.25em 0.8em;
+    font-size: 0.83rem;
+    text-decoration: none !important;
+    transition: all 0.18s ease;
+
+    &:hover {
+      background: var(--color-forest) !important;
+      color: #ffffff !important;
+      transform: translateY(-1px);
+    }
+  }
+}
+
+// ---- セクション見出し（ホームページ用） ----
+.zoo-section-heading {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.15rem;
+  color: var(--color-forest) !important;
+  border-left: 4px solid var(--color-mint) !important;
+  border-bottom: none !important;
+  padding: 0.2rem 0 0.2rem 0.8rem !important;
+  margin: 2rem 0 1rem 0;
+
+  &::before { content: '' !important; }
+}
+
+// ---- ダークモード対応 ----
+[saved-theme="dark"] {
+  .zoo-category-card {
+    background: var(--color-lightgray);
+    border-color: var(--color-gray);
+  }
+
+  .zoo-btn.zoo-btn-primary {
+    background: #e8f5ee;
+  }
+}
