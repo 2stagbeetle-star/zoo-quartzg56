@@ -4,50 +4,50 @@
 <circle cx="800" cy="440" r="140" fill="#95d5b2" opacity="0.25"/>
 <circle cx="0" cy="440" r="90" fill="#52796f" opacity="0.12"/>
 <rect x="0" y="0" width="800" height="72" fill="#2d6a4f"/>
-<text x="18" y="46" font-size="28" dominant-baseline="middle">🔧</text>
-<text x="56" y="42" font-size="16" fill="#ffffff" font-weight="bold" dominant-baseline="middle">飼育ノウハウ</text>
+<text x="18" y="46" font-size="28" dominant-baseline="middle">💼</text>
+<text x="56" y="42" font-size="16" fill="#ffffff" font-weight="bold" dominant-baseline="middle">求人情報</text>
 <text x="786" y="42" font-size="13" fill="#95d5b2" text-anchor="end" dominant-baseline="middle">2026-03-29</text>
 <text x="786" y="60" font-size="11" fill="#95d5b2" opacity="0.8" text-anchor="end">Zoo Knowledge Vault</text>
-<text x="20" y="110" font-size="24" fill="#2b2926" font-weight="bold">春季の環境エンリッチメント実践ガイド</text>
+<text x="20" y="110" font-size="24" fill="#2b2926" font-weight="bold">動物園・水族館・NPO法人 求人情報まとめ</text>
 <rect x="20" y="140" width="60" height="3" fill="#95d5b2" rx="2"/>
 <rect x="0" y="150" width="800" height="40" fill="#52796f" opacity="0.1"/>
-<text x="20" y="175" font-size="14" fill="#52796f" font-weight="bold">▶ &lt;img src=&quot;/_images/春季の環境エンリッチメント実践ガイド_infographic.svg&quot; alt=&quot;インフォグラフィック&quot; </text>
+<text x="20" y="175" font-size="14" fill="#52796f" font-weight="bold">▶ &gt; **最終確認日:** 2026-03-29</text>
 <rect x="12" y="196" width="188" height="110" fill="#ffffff" rx="8" stroke="#b7e4c7" stroke-width="1.5"/>
 <circle cx="36" cy="220" r="18" fill="#d8f3dc"/>
 <text x="36" y="220" font-size="18" text-anchor="middle" dominant-baseline="middle">🌱</text>
-<text x="62" y="216" font-size="13" fill="#2d6a4f" font-weight="bold">インフォグラフィ</text>
-<text x="22" y="251" font-size="12" fill="#1a1a1a">&lt;img src=&quot;/_images/春季の</text>
-<text x="22" y="268" font-size="12" fill="#1a1a1a">環境エンリッ</text>
+<text x="62" y="216" font-size="13" fill="#2d6a4f" font-weight="bold">求人情報ポータル</text>
+<text x="22" y="254" font-size="12" fill="#1a1a1a"></text>
 <circle cx="186" cy="210" r="11" fill="#52796f"/>
 <text x="186" y="210" font-size="12" fill="white" text-anchor="middle" dominant-baseline="middle">1</text>
 <rect x="208" y="196" width="188" height="110" fill="#ffffff" rx="8" stroke="#b7e4c7" stroke-width="1.5"/>
 <circle cx="232" cy="220" r="18" fill="#d8f3dc"/>
 <text x="232" y="220" font-size="18" text-anchor="middle" dominant-baseline="middle">🌿</text>
-<text x="258" y="216" font-size="13" fill="#2d6a4f" font-weight="bold">概要</text>
-<text x="218" y="254" font-size="12" fill="#1a1a1a"></text>
+<text x="258" y="216" font-size="13" fill="#2d6a4f" font-weight="bold">動物園の採用情報</text>
+<text x="218" y="251" font-size="12" fill="#1a1a1a">&gt; 市立動物園は**各市の職員採用試験**が</text>
+<text x="218" y="268" font-size="12" fill="#1a1a1a">必要です。→</text>
 <circle cx="382" cy="210" r="11" fill="#52796f"/>
 <text x="382" y="210" font-size="12" fill="white" text-anchor="middle" dominant-baseline="middle">2</text>
 <rect x="404" y="196" width="188" height="110" fill="#ffffff" rx="8" stroke="#b7e4c7" stroke-width="1.5"/>
 <circle cx="428" cy="220" r="18" fill="#d8f3dc"/>
 <text x="428" y="220" font-size="18" text-anchor="middle" dominant-baseline="middle">🍃</text>
-<text x="454" y="216" font-size="13" fill="#2d6a4f" font-weight="bold">背景・目的</text>
-<text x="414" y="251" font-size="12" fill="#1a1a1a">冬季に活動量が低下していた動物たちは、</text>
-<text x="414" y="268" font-size="12" fill="#1a1a1a">春の気温上昇ととも</text>
+<text x="454" y="216" font-size="13" fill="#2d6a4f" font-weight="bold">東京動物園協会（</text>
+<text x="414" y="254" font-size="12" fill="#1a1a1a"></text>
 <circle cx="578" cy="210" r="11" fill="#52796f"/>
 <text x="578" y="210" font-size="12" fill="white" text-anchor="middle" dominant-baseline="middle">3</text>
 <rect x="600" y="196" width="188" height="110" fill="#ffffff" rx="8" stroke="#b7e4c7" stroke-width="1.5"/>
 <circle cx="624" cy="220" r="18" fill="#d8f3dc"/>
 <text x="624" y="220" font-size="18" text-anchor="middle" dominant-baseline="middle">🌾</text>
-<text x="650" y="216" font-size="13" fill="#2d6a4f" font-weight="bold">必要な準備・器材</text>
-<text x="610" y="254" font-size="12" fill="#1a1a1a"></text>
+<text x="650" y="216" font-size="13" fill="#2d6a4f" font-weight="bold">旭山動物園（旭川</text>
+<text x="610" y="251" font-size="12" fill="#1a1a1a">- **採用:** 旭川市職員として採用（市</text>
+<text x="610" y="268" font-size="12" fill="#1a1a1a">の採用試験が</text>
 <circle cx="774" cy="210" r="11" fill="#52796f"/>
 <text x="774" y="210" font-size="12" fill="white" text-anchor="middle" dominant-baseline="middle">4</text>
 <rect x="12" y="318" width="220" height="54" fill="#2d6a4f" rx="8"/>
-<text x="24" y="338" font-size="11" fill="#95d5b2">&lt;img src=&quot;/_</text>
-<text x="24" y="362" font-size="22" fill="#ffffff" font-weight="bold">100%</text>
+<text x="24" y="338" font-size="11" fill="#95d5b2">| zoo-palett</text>
+<text x="24" y="362" font-size="22" fill="#ffffff" font-weight="bold">5%</text>
 <line x1="248" y1="324" x2="248" y2="366" stroke="#b7e4c7" stroke-width="1"/>
 <text x="262" y="340" font-size="11" fill="#666666">Zoo Knowledge Vault</text>
-<text x="262" y="360" font-size="13" fill="#52796f" font-weight="bold">飼育ノウハウ</text>
+<text x="262" y="360" font-size="13" fill="#52796f" font-weight="bold">求人情報</text>
 <circle cx="770" cy="345" r="22" fill="#d8f3dc"/>
-<text x="770" y="345" font-size="20" text-anchor="middle" dominant-baseline="middle">🔧</text>
+<text x="770" y="345" font-size="20" text-anchor="middle" dominant-baseline="middle">💼</text>
 </svg>
