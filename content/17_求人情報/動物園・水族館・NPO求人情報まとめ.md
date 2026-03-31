@@ -13,18 +13,10 @@ author: "Zoo Knowledge Vault"
 draft: false
 ---
 
+
 ## インフォグラフィック
 
-![](_images/動物園_水族館_NPO法人_求人情報まとめ_infographic.svg)
-<img src="/_images/動物園_水族館_NPO法人_求人情報まとめ_infographic.svg" alt="インフォグラフィック" style="max-width:100%;border-radius:8px;" />
-
-
-# 動物園・水族館・NPO法人 求人情報まとめ
-
-> **最終確認日:** 2026-03-29
-> 求人情報は随時変動します。**必ず各施設の公式採用ページで最新情報をご確認ください。**
-
----
+![[動物園_水族館_NPO法人_求人情報まとめ_infographic.svg]]
 
 ## 求人情報ポータル・SNS（まず確認）
 

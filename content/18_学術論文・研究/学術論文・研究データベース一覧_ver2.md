@@ -13,19 +13,10 @@ author: "Zoo Knowledge Vault"
 draft: false
 ---
 
+
 ## インフォグラフィック
 
-![](_images/自然科学_学術論文_研究データベース一覧_infographic.svg)
-<img src="/_images/自然科学_学術論文_研究データベース一覧_infographic.svg" alt="インフォグラフィック" style="max-width:100%;border-radius:8px;" />
-
-
-# 自然科学 学術論文・研究データベース一覧
-
-> 論文の引用・参照の際は必ず原著DOIを確認してください。
-> 英語論文には日本語要約を付記しています。
-> **最終確認日:** 2026-03-29
-
----
+![[自然科学_学術論文_研究データベース一覧_infographic.svg]]
 
 ## 主要論文データベース
 
