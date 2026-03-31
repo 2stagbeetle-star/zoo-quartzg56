@@ -20,6 +20,8 @@ export default (() => {
       fileData.frontmatter?.description ??
       unescapeHTML(fileData.description?.trim() ?? i18n(cfg.locale).propertyDefaults.description)
 
+    const isArticle = !!(fileData.dates?.created && fileData.frontmatter?.title && fileData.slug !== "index")
+
     const { css, js, additionalHead } = externalResources
 
     const url = new URL(`https://${cfg.baseUrl ?? "example.com"}`)
@@ -55,7 +57,7 @@ export default (() => {
 
         <meta name="og:site_name" content={cfg.pageTitle}></meta>
         <meta property="og:title" content={title} />
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content={isArticle ? "article" : "website"} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
@@ -85,6 +87,50 @@ export default (() => {
         <link rel="icon" href={iconPath} />
         <meta name="description" content={description} />
         <meta name="generator" content="Quartz" />
+
+        {/* Canonical URL: 重複コンテンツ防止 */}
+        {cfg.baseUrl && fileData.slug !== "404" && (
+          <link rel="canonical" href={socialUrl} />
+        )}
+
+        {/* クローラー指示 */}
+        <meta name="robots" content="index, follow, max-image-preview:large" />
+
+        {/* OGP 画像サイズ（SNSシェア最適化） */}
+        {!usesCustomOgImage && (
+          <>
+            <meta property="og:image:width" content="1200" />
+            <meta property="og:image:height" content="630" />
+          </>
+        )}
+
+        {/* JSON-LD 構造化データ（Google リッチリザルト対応） */}
+        {(() => {
+          const jsonLd = isArticle
+            ? {
+                "@context": "https://schema.org",
+                "@type": "Article",
+                "headline": title,
+                "description": description,
+                "url": socialUrl,
+                "datePublished": fileData.dates?.created?.toISOString() ?? "",
+                "dateModified": (fileData.dates?.modified ?? fileData.dates?.created)?.toISOString() ?? "",
+                "author": { "@type": "Organization", "name": "Zoo Knowledge Vault", "url": `https://${cfg.baseUrl}` },
+                "publisher": { "@type": "Organization", "name": cfg.pageTitle, "url": `https://${cfg.baseUrl}` },
+                "image": ogImageDefaultPath,
+                "inLanguage": "ja-JP",
+                "mainEntityOfPage": { "@type": "WebPage", "@id": socialUrl },
+              }
+            : {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "name": cfg.pageTitle,
+                "url": `https://${cfg.baseUrl}`,
+                "description": description,
+                "inLanguage": "ja-JP",
+              }
+          return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+        })()}
 
         {css.map((resource) => CSSResourceToStyleElement(resource, true))}
         {js

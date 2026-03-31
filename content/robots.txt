@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# タグ・検索ページはインデックス対象外
+Disallow: /tags/
+Disallow: /search/
+
+# サイトマップの場所を明示
+Sitemap: https://2stagbeetle-star.github.io/zoo-quartzg56/sitemap.xml
