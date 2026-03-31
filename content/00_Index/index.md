@@ -170,6 +170,98 @@ draft: false
   </a>
 </div>
 
+<h2 class="zoo-section-heading">今月の特集</h2>
+
+<div class="zoo-featured-section">
+  <a href="02_季節トピック/春季" class="zoo-featured-card" data-cat="season">
+    <div class="zoo-featured-label">今月の自然テーマ</div>
+    <div class="zoo-featured-emoji">🌸</div>
+    <h3>春の生き物と季節の移ろい</h3>
+    <p>桜前線とともに変わる動植物の行動・開花・繁殖のサインを読む</p>
+    <span class="zoo-featured-link">特集を読む →</span>
+  </a>
+  <a href="02_季節トピック" class="zoo-featured-card" data-cat="season">
+    <div class="zoo-featured-label">季節の特集</div>
+    <div class="zoo-featured-emoji">🌿</div>
+    <h3>春の動物園・水族館特集 2026</h3>
+    <p>新生児展示・春季プログラム・バックヤードツアー情報まとめ</p>
+    <span class="zoo-featured-link">特集を読む →</span>
+  </a>
+  <a href="15_動物園学・博物館学" class="zoo-featured-card" data-cat="zoo">
+    <div class="zoo-featured-label">動物園・水族館まとめ</div>
+    <div class="zoo-featured-emoji">🦁</div>
+    <h3>動物園・水族館関連まとめ</h3>
+    <p>JAZA加盟園館の取り組み・最新ニュース・施設情報を一覧で確認</p>
+    <span class="zoo-featured-link">まとめを見る →</span>
+  </a>
+</div>
+
+<h2 class="zoo-section-heading">学びのテーマ別</h2>
+
+<div class="zoo-learn-section">
+  <a href="03_飼育ノウハウ" class="zoo-learn-card">
+    <div class="zoo-learn-icon">🔧</div>
+    <h3>飼育</h3>
+    <p>エンリッチメント・給餌管理・行動観察・個体識別など実務知識</p>
+  </a>
+  <a href="11_生態学・自然環境学" class="zoo-learn-card">
+    <div class="zoo-learn-icon">🌿</div>
+    <h3>生態</h3>
+    <p>生態系サービス・食物連鎖・フィールド調査・景観生態学</p>
+  </a>
+  <a href="14_環境問題・気候変動" class="zoo-learn-card">
+    <div class="zoo-learn-icon">🌍</div>
+    <h3>環境問題</h3>
+    <p>気候変動・海洋酸性化・外来種・生物多様性損失の最前線</p>
+  </a>
+  <a href="08_動物保護・保全生物学" class="zoo-learn-card">
+    <div class="zoo-learn-icon">🛡️</div>
+    <h3>保全活動</h3>
+    <p>域外保全・野生復帰・個体群管理・IUCNレッドリスト解説</p>
+  </a>
+</div>
+
+<h2 class="zoo-section-heading">コンテンツを探す</h2>
+
+<div class="zoo-discover-section">
+  <div class="zoo-discover-card">
+    <div class="zoo-discover-header">
+      <span class="zoo-discover-emoji">📖</span>
+      <h3>動物図鑑</h3>
+    </div>
+    <p>哺乳類・鳥類・爬虫類・魚類・無脊椎動物を種ごとに詳しく解説。分類・生態・保全状況を網羅。</p>
+    <ul class="zoo-discover-links">
+      <li><a href="13_生物分類図鑑">生物分類図鑑トップ</a></li>
+      <li><a href="05_種別図鑑">種別図鑑トップ</a></li>
+      <li><a href="tags/図鑑">#図鑑タグ一覧</a></li>
+    </ul>
+  </div>
+  <div class="zoo-discover-card">
+    <div class="zoo-discover-header">
+      <span class="zoo-discover-emoji">✍️</span>
+      <h3>自然コラム</h3>
+    </div>
+    <p>飼育員・研究者の視点で綴る自然コラム。季節の観察記録から最新研究の紹介まで。</p>
+    <ul class="zoo-discover-links">
+      <li><a href="01_飼育日誌">飼育日誌</a></li>
+      <li><a href="04_生態系ニュース">生態系ニュース</a></li>
+      <li><a href="tags/コラム">#コラムタグ一覧</a></li>
+    </ul>
+  </div>
+  <div class="zoo-discover-card">
+    <div class="zoo-discover-header">
+      <span class="zoo-discover-emoji">📷</span>
+      <h3>動画・写真ギャラリー</h3>
+    </div>
+    <p>フィールドワーク・調査現場の写真、動物行動の観察動画、インフォグラフィックを集めたギャラリー。</p>
+    <ul class="zoo-discover-links">
+      <li><a href="16_フィールドワーク・調査手法">フィールドワーク記事</a></li>
+      <li><a href="tags/写真">#写真タグ一覧</a></li>
+      <li><a href="tags/動画">#動画タグ一覧</a></li>
+    </ul>
+  </div>
+</div>
+
 <h2 class="zoo-section-heading">人気タグ</h2>
 
 <div class="zoo-tag-cloud">
@@ -210,7 +302,7 @@ draft: false
   }, { threshold: 0.08 });
 
   function init() {
-    document.querySelectorAll('.zoo-category-card, .zoo-recent-article').forEach(function (el) {
+    document.querySelectorAll('.zoo-category-card, .zoo-recent-article, .zoo-featured-card, .zoo-learn-card, .zoo-discover-card').forEach(function (el) {
       io.observe(el);
     });
   }

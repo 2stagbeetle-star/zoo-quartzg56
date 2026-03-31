@@ -6,23 +6,40 @@
 
 // ---- CSS変数（カラーパレット） ----
 :root {
-  --color-forest:    #2d6a4f;
-  --color-sage:      #52796f;
-  --color-mint:      #95d5b2;
-  --color-leaf:      #74c69d;
-  --color-sky:       #a8dadc;
-  --color-earth:     #8b6f47;
-  --color-bark:      #4a3728;
-  --color-cream:     #faf8f5;
-  --color-sand:      #e8e4df;
-  --color-moss:      #40916c;
+  // ── 自然テーマカラー ──
+  --color-forest:      #2d6a4f;
+  --color-sage:        #52796f;
+  --color-mint:        #95d5b2;
+  --color-leaf:        #74c69d;
+  --color-sky:         #a8dadc;
+  --color-sunlight:    #E7C96F;  // サンライトイエロー - バッジ・アクセント
+  --color-earth:       #8b6f47;
+  --color-bark:        #4a3728;
+  --color-cream:       #faf8f5;
+  --color-sand:        #e8e4df;
+  --color-moss:        #40916c;
+
+  // ── 意味的カラー（ハードコード色を変数化） ──
+  --color-forest-deep: #1b4332;  // h2・カード見出し用の深い緑
+  --color-link-default:#1b5e3a;  // リンクデフォルト色
+  --color-text-main:   #222222;  // 本文メインテキスト
+  --color-text-sub:    #555555;  // サブテキスト・日付
+  --color-text-muted:  #444444;  // フッター等
+  --color-toc-link:    #333333;  // TOCリンク
+  --color-blockquote:  #3a4a44;  // 引用ブロックテキスト
+  --color-code-bg:     #1a1e1c;  // コードブロック背景
+  --color-card-bg:     #ffffff;  // カード背景
+
+  // ── トランジション変数 ──
+  --transition-fast:   0.18s;    // タグ・軽微なホバー
+  --transition-normal: 0.22s;    // カード・ボタンのホバー
 }
 
 // ---- ボディ・背景 ----
 body {
   font-family: 'Noto Sans JP', sans-serif;
   background-color: var(--color-cream);
-  color: #222222;
+  color: var(--color-text-main);
 
   // 背景に葉のシルエットパターン（SVGをdata URIで埋め込み）
   &::before {
@@ -74,7 +91,7 @@ header {
   // サイドバー上部に木のアイコン装飾
   .sidebar-content {
     &::before {
-      content: '🌿';
+      content: '🌿' / '';  // スクリーンリーダー読み上げ抑制
       display: block;
       font-size: 1.5rem;
       text-align: center;
@@ -93,7 +110,7 @@ h1 {
   position: relative;
 
   &::before {
-    content: '🌱 ';
+    content: '🌱 ' / '';  // スクリーンリーダー読み上げ抑制
     font-size: 0.85em;
   }
 }
@@ -101,7 +118,7 @@ h1 {
 // ---- 見出し（h2/h3） ----
 h2 {
   font-family: 'Noto Serif JP', serif;
-  color: #1b4332 !important;
+  color: var(--color-forest-deep) !important;
   border-left: 4px solid var(--color-mint);
   padding-left: 0.75rem;
   margin-top: 2rem;
@@ -153,7 +170,7 @@ article {
 
   // コードブロック
   pre {
-    background: #1a1e1c !important;
+    background: var(--color-code-bg) !important;
     border-left: 4px solid var(--color-forest);
     border-radius: 0 6px 6px 0;
   }
@@ -173,7 +190,7 @@ article {
     padding: 0.8rem 1.2rem;
     border-radius: 0 6px 6px 0;
     font-style: italic;
-    color: #3a4a44;
+    color: var(--color-blockquote);
   }
 
   // インフォグラフィック画像
@@ -188,20 +205,26 @@ article {
   }
 }
 
-// ---- タグ ----
-.tag-link, a.tag-link {
-  background: rgba(45, 106, 79, 0.12) !important;
+// ---- タグ（共通ベース） ----
+// .tag-link と .zoo-tag-cloud a は同じ外観ベースを共有し、サイズ・余白のみ個別指定
+.tag-link, a.tag-link,
+.zoo-tag-cloud a {
+  background: rgba(45, 106, 79, 0.1) !important;
   color: var(--color-forest) !important;
   border: 1px solid var(--color-mint) !important;
   border-radius: 20px;
-  padding: 0.15em 0.7em;
-  font-size: 0.82em;
-  transition: all 0.2s;
+  text-decoration: none !important;
 
   &:hover {
     background: var(--color-forest) !important;
     color: #ffffff !important;
   }
+}
+
+.tag-link, a.tag-link {
+  padding: 0.15em 0.7em;
+  font-size: 0.82em;
+  transition: all var(--transition-normal);
 }
 
 // ---- グラフビュー ----
@@ -231,12 +254,12 @@ footer {
   border-top: 2px solid var(--color-mint);
   padding: 1.5rem;
   text-align: center;
-  color: #444444;
+  color: var(--color-text-muted);
   font-size: 0.85rem;
   position: relative;
 
   &::before {
-    content: '🦁 🌿 🦜 🌸 🐢 🌲 🦋 🌾 🐘';
+    content: '🦁 🌿 🦜 🌸 🐢 🌲 🦋 🌾 🐘' / '';  // スクリーンリーダー読み上げ抑制
     display: block;
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
@@ -247,7 +270,7 @@ footer {
 
 // ---- リンク ----
 a {
-  color: #1b5e3a !important;
+  color: var(--color-link-default) !important;
   text-decoration-color: var(--color-mint);
   font-weight: 500;
 
@@ -264,7 +287,9 @@ a {
   padding: 1rem;
   background: rgba(149, 213, 178, 0.06);
 
-  h3::before { content: '🔗 '; }
+  h3::before {
+    content: '🔗 ' / '';  // スクリーンリーダー読み上げ抑制
+  }
 }
 
 // ---- 目次（TOC） ----
@@ -272,7 +297,7 @@ a {
   border-left: 3px solid var(--color-mint);
   padding-left: 1rem;
 
-  li a { color: #333333 !important; font-weight: 500; }
+  li a { color: var(--color-toc-link) !important; font-weight: 500; }
   li a:hover { color: var(--color-forest) !important; }
 }
 
@@ -297,7 +322,7 @@ a {
     border-left: 3px solid var(--color-mint);
     padding-left: 0.8rem;
     margin: 0.4rem 0;
-    transition: border-color 0.2s;
+    transition: border-color var(--transition-normal);
 
     &:hover {
       border-color: var(--color-forest);
@@ -306,7 +331,6 @@ a {
 }
 
 // ---- 種別図鑑テーブル（保全ステータス色分け） ----
-td:has(+ td),
 .cr-status { color: #c62828; font-weight: bold; }  // CR危機
 .en-status { color: #e65100; font-weight: bold; }  // EN危惧
 .vu-status { color: #f57f17; font-weight: bold; }  // VU危急
@@ -349,7 +373,12 @@ td:has(+ td),
 
 // ---- ヒーローセクション ----
 .zoo-hero {
-  background: linear-gradient(135deg, #2d6a4f 0%, #40916c 40%, #52796f 80%, #a8dadc 100%);
+  background: linear-gradient(135deg,
+    var(--color-forest)  0%,
+    var(--color-moss)   40%,
+    var(--color-sage)   80%,
+    var(--color-sky)   100%
+  );
   border-radius: 12px;
   padding: 3rem 2.5rem;
   margin: 0 0 2.5rem 0;
@@ -358,7 +387,7 @@ td:has(+ td),
   animation: fadeInUp 0.5s ease-out;
 
   &::before {
-    content: '🌿 🦁 🌊 🦜 🌲 🐘 🐠 🦋';
+    content: '🌿 🦁 🌊 🦜 🌲 🐘 🐠 🦋' / '';  // スクリーンリーダー読み上げ抑制
     position: absolute;
     top: 10px;
     right: 16px;
@@ -409,12 +438,12 @@ td:has(+ td),
   font-weight: 600;
   font-size: 0.95rem;
   text-decoration: none !important;
-  transition: all 0.2s ease;
+  transition: all var(--transition-normal) ease;
   cursor: pointer;
 
   &.zoo-btn-primary {
-    background: #ffffff;
-    color: #2d6a4f !important;
+    background: var(--color-card-bg);
+    color: var(--color-forest) !important;
 
     &:hover {
       background: #f0faf4;
@@ -447,11 +476,11 @@ td:has(+ td),
 .zoo-category-card {
   display: flex;
   flex-direction: column;
-  background: #ffffff;
+  background: var(--color-card-bg);
   border-radius: 12px;
   text-decoration: none !important;
-  color: #222222 !important;
-  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  color: var(--color-text-main) !important;
+  transition: transform var(--transition-normal) ease, box-shadow var(--transition-normal) ease;
   box-shadow: 0 2px 8px rgba(45,106,79,0.09);
   overflow: hidden;
   border: 1px solid var(--color-sand);
@@ -464,7 +493,7 @@ td:has(+ td),
     transform: translateY(-4px);
     box-shadow: 0 10px 28px rgba(45,106,79,0.18);
     text-decoration: none !important;
-    color: #222222 !important;
+    color: var(--color-text-main) !important;
 
     .zoo-cat-emoji {
       transform: scale(1.2) rotate(-5deg);
@@ -476,7 +505,7 @@ td:has(+ td),
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #2d6a4f, #52796f);
+    background: var(--cat-gradient, linear-gradient(135deg, var(--color-forest), var(--color-sage)));
     position: relative;
     overflow: hidden;
 
@@ -501,7 +530,7 @@ td:has(+ td),
       font-size: 2.6rem;
       line-height: 1;
       z-index: 1;
-      transition: transform 0.22s ease;
+      transition: transform var(--transition-normal) ease;
       filter: drop-shadow(0 2px 6px rgba(0,0,0,0.25));
     }
   }
@@ -512,7 +541,7 @@ td:has(+ td),
     h3 {
       font-family: 'Noto Serif JP', serif;
       font-size: 0.88rem;
-      color: #1b4332 !important;
+      color: var(--color-forest-deep) !important;
       border-left: none !important;
       padding-left: 0 !important;
       margin: 0 0 0.2rem 0;
@@ -521,7 +550,7 @@ td:has(+ td),
 
     p {
       font-size: 0.76rem;
-      color: #555555;
+      color: var(--color-text-sub);
       margin: 0;
       line-height: 1.45;
     }
@@ -533,41 +562,25 @@ td:has(+ td),
   to   { opacity: 1; transform: translateY(0); }
 }
 
-// ---- カテゴリ別グラデーション ----
-.zoo-category-card[data-cat="diary"]    .zoo-cat-photo,
-.zoo-recent-article[data-cat="diary"]   .zoo-recent-photo { background: linear-gradient(135deg, #8b4513, #c4783c); }
-.zoo-category-card[data-cat="season"]   .zoo-cat-photo,
-.zoo-recent-article[data-cat="season"]  .zoo-recent-photo { background: linear-gradient(135deg, #b83c6b, #e07390); }
-.zoo-category-card[data-cat="howto"]    .zoo-cat-photo,
-.zoo-recent-article[data-cat="howto"]   .zoo-recent-photo { background: linear-gradient(135deg, #2d6a4f, #52796f); }
-.zoo-category-card[data-cat="news"]     .zoo-cat-photo,
-.zoo-recent-article[data-cat="news"]    .zoo-recent-photo { background: linear-gradient(135deg, #1565c0, #2196f3); }
-.zoo-category-card[data-cat="guide"]    .zoo-cat-photo,
-.zoo-recent-article[data-cat="guide"]   .zoo-recent-photo { background: linear-gradient(135deg, #e65100, #f57c00); }
-.zoo-category-card[data-cat="nature"]   .zoo-cat-photo,
-.zoo-recent-article[data-cat="nature"]  .zoo-recent-photo { background: linear-gradient(135deg, #1b5e20, #388e3c); }
-.zoo-category-card[data-cat="aquarium"] .zoo-cat-photo,
-.zoo-recent-article[data-cat="aquarium"] .zoo-recent-photo { background: linear-gradient(135deg, #006064, #0097a7); }
-.zoo-category-card[data-cat="protect"]  .zoo-cat-photo,
-.zoo-recent-article[data-cat="protect"] .zoo-recent-photo { background: linear-gradient(135deg, #1a3720, #2e6b3e); }
-.zoo-category-card[data-cat="vet"]      .zoo-cat-photo,
-.zoo-recent-article[data-cat="vet"]     .zoo-recent-photo { background: linear-gradient(135deg, #0d47a1, #1976d2); }
-.zoo-category-card[data-cat="bio"]      .zoo-cat-photo,
-.zoo-recent-article[data-cat="bio"]     .zoo-recent-photo { background: linear-gradient(135deg, #4a148c, #7b1fa2); }
-.zoo-category-card[data-cat="ecology"]  .zoo-cat-photo,
-.zoo-recent-article[data-cat="ecology"] .zoo-recent-photo { background: linear-gradient(135deg, #1e5631, #2e7d32); }
-.zoo-category-card[data-cat="plants"]   .zoo-cat-photo,
-.zoo-recent-article[data-cat="plants"]  .zoo-recent-photo { background: linear-gradient(135deg, #33691e, #558b2f); }
-.zoo-category-card[data-cat="taxon"]    .zoo-cat-photo,
-.zoo-recent-article[data-cat="taxon"]   .zoo-recent-photo { background: linear-gradient(135deg, #bf360c, #e64a19); }
-.zoo-category-card[data-cat="climate"]  .zoo-cat-photo,
-.zoo-recent-article[data-cat="climate"] .zoo-recent-photo { background: linear-gradient(135deg, #01579b, #0288d1); }
-.zoo-category-card[data-cat="zoo"]      .zoo-cat-photo,
-.zoo-recent-article[data-cat="zoo"]     .zoo-recent-photo { background: linear-gradient(135deg, #1b4332, #40916c); }
-.zoo-category-card[data-cat="jobs"]     .zoo-cat-photo,
-.zoo-recent-article[data-cat="jobs"]    .zoo-recent-photo { background: linear-gradient(135deg, #7f3f00, #cc7400); }
-.zoo-category-card[data-cat="research"] .zoo-cat-photo,
-.zoo-recent-article[data-cat="research"] .zoo-recent-photo { background: linear-gradient(135deg, #1a237e, #283593); }
+// ---- カテゴリ別グラデーション（CSS変数でDRY化） ----
+// data-cat 属性で --cat-gradient を設定し、.zoo-cat-photo / .zoo-recent-photo が継承
+[data-cat="diary"]    { --cat-gradient: linear-gradient(135deg, #8b4513, #c4783c); }
+[data-cat="season"]   { --cat-gradient: linear-gradient(135deg, #b83c6b, #e07390); }
+[data-cat="howto"]    { --cat-gradient: linear-gradient(135deg, var(--color-forest), var(--color-sage)); }
+[data-cat="news"]     { --cat-gradient: linear-gradient(135deg, #1565c0, #2196f3); }
+[data-cat="guide"]    { --cat-gradient: linear-gradient(135deg, #e65100, #f57c00); }
+[data-cat="nature"]   { --cat-gradient: linear-gradient(135deg, #1b5e20, #388e3c); }
+[data-cat="aquarium"] { --cat-gradient: linear-gradient(135deg, #006064, #0097a7); }
+[data-cat="protect"]  { --cat-gradient: linear-gradient(135deg, #1a3720, #2e6b3e); }
+[data-cat="vet"]      { --cat-gradient: linear-gradient(135deg, #0d47a1, #1976d2); }
+[data-cat="bio"]      { --cat-gradient: linear-gradient(135deg, #4a148c, #7b1fa2); }
+[data-cat="ecology"]  { --cat-gradient: linear-gradient(135deg, #1e5631, #2e7d32); }
+[data-cat="plants"]   { --cat-gradient: linear-gradient(135deg, #33691e, #558b2f); }
+[data-cat="taxon"]    { --cat-gradient: linear-gradient(135deg, #bf360c, #e64a19); }
+[data-cat="climate"]  { --cat-gradient: linear-gradient(135deg, #01579b, #0288d1); }
+[data-cat="zoo"]      { --cat-gradient: linear-gradient(135deg, #1b4332, #40916c); }
+[data-cat="jobs"]     { --cat-gradient: linear-gradient(135deg, #7f3f00, #cc7400); }
+[data-cat="research"] { --cat-gradient: linear-gradient(135deg, #1a237e, #283593); }
 
 // ---- 新着記事グリッド ----
 .zoo-recent-grid {
@@ -580,14 +593,14 @@ td:has(+ td),
 .zoo-recent-article {
   display: flex;
   flex-direction: column;
-  background: #ffffff;
+  background: var(--color-card-bg);
   border-radius: 12px;
   border: 1px solid var(--color-sand);
   box-shadow: 0 2px 8px rgba(45,106,79,0.08);
   text-decoration: none !important;
-  color: #222222 !important;
+  color: var(--color-text-main) !important;
   overflow: hidden;
-  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  transition: transform var(--transition-normal) ease, box-shadow var(--transition-normal) ease;
 
   &.visible {
     animation: cardReveal 0.5s ease-out;
@@ -597,7 +610,7 @@ td:has(+ td),
     transform: translateY(-4px);
     box-shadow: 0 10px 28px rgba(45,106,79,0.18);
     text-decoration: none !important;
-    color: #222222 !important;
+    color: var(--color-text-main) !important;
   }
 
   .zoo-recent-photo {
@@ -605,7 +618,7 @@ td:has(+ td),
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #2d6a4f, #52796f);
+    background: var(--cat-gradient, linear-gradient(135deg, var(--color-forest), var(--color-sage)));
     font-size: 2.2rem;
     position: relative;
     overflow: hidden;
@@ -631,14 +644,14 @@ td:has(+ td),
     .zoo-recent-date {
       display: block;
       font-size: 0.73rem;
-      color: #555555;
+      color: var(--color-text-sub);
       margin-bottom: 0.3rem;
       font-weight: 500;
     }
 
     h3 {
       font-size: 0.88rem;
-      color: #1b4332 !important;
+      color: var(--color-forest-deep) !important;
       border-left: none !important;
       padding-left: 0 !important;
       margin: 0 0 0.25rem 0;
@@ -648,7 +661,7 @@ td:has(+ td),
 
     p {
       font-size: 0.76rem;
-      color: #555555;
+      color: var(--color-text-sub);
       margin: 0;
       line-height: 1.4;
     }
@@ -662,19 +675,13 @@ td:has(+ td),
   gap: 0.5rem;
   margin: 1rem 0 2rem 0;
 
+  // 共通ベースは .tag-link と共有済み。ここでは差分のみ指定
   a {
-    background: rgba(45, 106, 79, 0.1) !important;
-    color: var(--color-forest) !important;
-    border: 1px solid var(--color-mint) !important;
-    border-radius: 20px;
     padding: 0.25em 0.8em;
     font-size: 0.83rem;
-    text-decoration: none !important;
-    transition: all 0.18s ease;
+    transition: all var(--transition-fast) ease;
 
     &:hover {
-      background: var(--color-forest) !important;
-      color: #ffffff !important;
       transform: translateY(-1px);
     }
   }
@@ -684,7 +691,7 @@ td:has(+ td),
 .zoo-section-heading {
   font-family: 'Noto Serif JP', serif;
   font-size: 1.15rem;
-  color: #1b4332 !important;
+  color: var(--color-forest-deep) !important;
   font-weight: 700;
   border-left: 4px solid var(--color-mint) !important;
   border-bottom: none !important;
@@ -700,7 +707,7 @@ td:has(+ td),
 .sidebar a,
 .folder-title,
 .folder-outer a {
-  color: #222222 !important;
+  color: var(--color-text-main) !important;
   font-weight: 500;
 
   &:hover {
@@ -711,25 +718,218 @@ td:has(+ td),
 // 記事一覧ページのテキスト
 .section-ul li a,
 .page-listing li a {
-  color: #222222 !important;
+  color: var(--color-text-main) !important;
   font-weight: 500;
 }
 
 // コンテンツメタ（日付・読了時間）
 .content-meta {
-  color: #555555 !important;
+  color: var(--color-text-sub) !important;
   font-weight: 500;
 }
 
 // ---- ダークモード対応 ----
 [saved-theme="dark"] {
+  // カード
   .zoo-category-card,
   .zoo-recent-article {
     background: var(--color-lightgray);
     border-color: var(--color-gray);
+    color: var(--darkgray) !important;
   }
 
+  // カード内テキスト
+  .zoo-cat-body h3,
+  .zoo-recent-body h3 {
+    color: var(--darkgray) !important;
+  }
+  .zoo-cat-body p,
+  .zoo-recent-body p,
+  .zoo-recent-date,
+  .content-meta {
+    color: var(--gray) !important;
+  }
+
+  // ヒーロー（輝度を落として視認性を確保）
+  .zoo-hero {
+    background: linear-gradient(135deg, #1a3d2e 0%, #254f3e 40%, #2e4040 80%, #3a5f60 100%);
+  }
+
+  // フッター
+  footer {
+    color: var(--gray);
+  }
+
+  // サイドバー
+  #quartz-body .sidebar {
+    background: rgba(30, 30, 30, 0.95);
+    border-color: var(--color-gray);
+  }
+
+  // プライマリボタン
   .zoo-btn.zoo-btn-primary {
-    background: #e8f5ee;
+    background: #1e3a2e;
+    color: var(--color-mint) !important;
+  }
+
+  // ⑤⑥⑦ 新セクション ダークモード
+  .zoo-featured-card,
+  .zoo-learn-card,
+  .zoo-discover-card {
+    background: var(--color-lightgray);
+    border-color: var(--color-gray);
+    color: var(--darkgray) !important;
+    h3 { color: var(--darkgray) !important; }
+    p   { color: var(--gray) !important; }
+  }
+  .zoo-featured-label { background: rgba(231,201,111,0.85); color: #2a1f00; }
+  .zoo-featured-link  { color: var(--color-mint) !important; }
+  .zoo-discover-links li a { color: var(--color-mint) !important; }
+}
+
+// ============================================================
+// Zoo Knowledge Vault - ⑤⑥⑦ 特集・学習・回遊セクション
+// ============================================================
+
+// ---- ⑤ 今月の特集（3カラム） ----
+.zoo-featured-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.1rem;
+  margin: 1.5rem 0 2.5rem 0;
+  @media (max-width: 800px) { grid-template-columns: 1fr; }
+}
+
+.zoo-featured-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-card-bg);
+  border-radius: 12px;
+  border: 1px solid var(--color-sand);
+  box-shadow: 0 2px 8px rgba(45,106,79,0.09);
+  padding: 1.4rem 1.2rem 1.1rem;
+  text-decoration: none !important;
+  color: var(--color-text-main) !important;
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition-normal) ease,
+              box-shadow var(--transition-normal) ease;
+  &::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: var(--color-sunlight);
+    border-radius: 12px 12px 0 0;
+  }
+  &.visible { animation: cardReveal 0.5s ease-out; }
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 28px rgba(45,106,79,0.18);
+    text-decoration: none !important;
+    color: var(--color-text-main) !important;
+  }
+  .zoo-featured-label {
+    display: inline-block;
+    background: var(--color-sunlight);
+    color: var(--color-bark);
+    font-size: 0.7rem; font-weight: 700;
+    padding: 0.18em 0.65em; border-radius: 20px;
+    margin-bottom: 0.7rem; letter-spacing: 0.04em; align-self: flex-start;
+  }
+  .zoo-featured-emoji { font-size: 2.2rem; margin-bottom: 0.5rem; }
+  h3 {
+    font-family: 'Noto Serif JP', serif; font-size: 0.92rem;
+    color: var(--color-forest-deep) !important;
+    border-left: none !important; padding-left: 0 !important;
+    margin: 0 0 0.4rem 0; line-height: 1.35; font-weight: 700;
+  }
+  p { font-size: 0.78rem; color: var(--color-text-sub); margin: 0 0 0.9rem 0; line-height: 1.5; flex: 1; }
+  .zoo-featured-link { font-size: 0.78rem; font-weight: 600; color: var(--color-forest) !important; align-self: flex-start; }
+}
+
+// ---- ⑥ 学びのテーマ別（4カラム） ----
+.zoo-learn-section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin: 1.5rem 0 2.5rem 0;
+  @media (max-width: 800px) { grid-template-columns: repeat(2, 1fr); }
+}
+
+.zoo-learn-card {
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+  background: var(--color-card-bg);
+  border-radius: 12px; border: 1px solid var(--color-sand);
+  box-shadow: 0 2px 8px rgba(45,106,79,0.08);
+  padding: 1.4rem 1rem 1.2rem;
+  text-decoration: none !important; color: var(--color-text-main) !important;
+  transition: transform var(--transition-normal) ease, box-shadow var(--transition-normal) ease;
+  &.visible { animation: cardReveal 0.5s ease-out; }
+  &:hover {
+    transform: translateY(-4px); box-shadow: 0 10px 28px rgba(45,106,79,0.18);
+    text-decoration: none !important; color: var(--color-text-main) !important;
+    .zoo-learn-icon { transform: scale(1.18); }
+  }
+  .zoo-learn-icon {
+    font-size: 2.4rem; margin-bottom: 0.6rem;
+    transition: transform var(--transition-normal) ease;
+  }
+  h3 {
+    font-family: 'Noto Serif JP', serif; font-size: 0.9rem;
+    color: var(--color-forest-deep) !important;
+    border-left: none !important; padding-left: 0 !important;
+    margin: 0 0 0.45rem 0; font-weight: 700;
+    &::after {
+      content: ''; display: block; width: 28px; height: 2px;
+      background: var(--color-sunlight); margin: 0.3rem auto 0; border-radius: 2px;
+    }
+  }
+  p { font-size: 0.76rem; color: var(--color-text-sub); margin: 0; line-height: 1.5; }
+}
+
+// ---- ⑦ コンテンツ回遊導線（3カラム） ----
+.zoo-discover-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.1rem;
+  margin: 1.5rem 0 2.5rem 0;
+  @media (max-width: 800px) { grid-template-columns: 1fr; }
+}
+
+.zoo-discover-card {
+  background: var(--color-card-bg);
+  border-radius: 12px; border: 1px solid var(--color-sand);
+  box-shadow: 0 2px 8px rgba(45,106,79,0.08);
+  padding: 1.2rem 1.1rem 1.1rem;
+  color: var(--color-text-main);
+  display: flex; flex-direction: column;
+  transition: transform var(--transition-normal) ease, box-shadow var(--transition-normal) ease;
+  &.visible { animation: cardReveal 0.5s ease-out; }
+  &:hover {
+    transform: translateY(-4px); box-shadow: 0 10px 28px rgba(45,106,79,0.18);
+    .zoo-discover-emoji { transform: scale(1.15) rotate(-4deg); }
+  }
+  .zoo-discover-header {
+    display: flex; align-items: center; gap: 0.55rem;
+    margin-bottom: 0.6rem; padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--color-sunlight);
+  }
+  .zoo-discover-emoji {
+    font-size: 1.8rem; transition: transform var(--transition-normal) ease;
+  }
+  h3 {
+    font-family: 'Noto Serif JP', serif; font-size: 0.95rem;
+    color: var(--color-forest-deep) !important;
+    border-left: none !important; padding-left: 0 !important;
+    margin: 0; font-weight: 700;
+  }
+  p { font-size: 0.77rem; color: var(--color-text-sub); line-height: 1.55; margin: 0 0 0.8rem 0; flex: 1; }
+  .zoo-discover-links {
+    list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.3rem;
+    li a {
+      font-size: 0.78rem; font-weight: 600; color: var(--color-forest) !important;
+      text-decoration: none !important;
+      &::before { content: '›  '; color: var(--color-sunlight); font-weight: 900; }
+      &:hover { color: var(--color-moss) !important; text-decoration: underline !important; }
+    }
   }
 }
