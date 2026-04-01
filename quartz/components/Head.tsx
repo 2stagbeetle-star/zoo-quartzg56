@@ -87,6 +87,7 @@ export default (() => {
         <link rel="icon" href={iconPath} />
         <meta name="description" content={description} />
         <meta name="generator" content="Quartz" />
+        <meta name="google-site-verification" content="VIexgSyUx_U7tN29ttVh" />
 
         {/* Canonical URL: 重複コンテンツ防止 */}
         {cfg.baseUrl && fileData.slug !== "404" && (
