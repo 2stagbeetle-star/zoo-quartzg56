@@ -34,26 +34,26 @@ const config: QuartzConfig = {
       },
       colors: {
         lightMode: {
-          light: "#faf8f5",
-          lightgray: "#e8e4df",
-          gray: "#5c5c5c",
-          darkgray: "#222222",
-          dark: "#0a0a0a",
-          secondary: "#2d6a4f",   // 森林グリーン（メインカラー）
-          tertiary: "#52796f",    // セージグリーン
-          highlight: "rgba(45, 106, 79, 0.12)",
-          textHighlight: "#fff23688",
+          light: "#f8f6f2",
+          lightgray: "#e8e2d6",
+          gray: "#8c7a68",
+          darkgray: "#2c2820",
+          dark: "#1a1510",
+          secondary: "#2d5a27",   // 深い森緑（プライマリ）
+          tertiary: "#5a7a50",    // セージグリーン
+          highlight: "rgba(45, 90, 39, 0.08)",
+          textHighlight: "#c8a84b44",
         },
         darkMode: {
           light: "#1a1e1c",
-          lightgray: "#2d3330",
-          gray: "#a0a0a0",
-          darkgray: "#e0e0e0",
-          dark: "#ffffff",
-          secondary: "#74c69d",
-          tertiary: "#95d5b2",
-          highlight: "rgba(116, 198, 157, 0.12)",
-          textHighlight: "#b3aa0288",
+          lightgray: "#2e3530",
+          gray: "#8a9e8a",
+          darkgray: "#dde4dd",
+          dark: "#e8ede8",
+          secondary: "#7ab888",
+          tertiary: "#9dd0a0",
+          highlight: "rgba(122, 184, 136, 0.10)",
+          textHighlight: "#c8a84b44",
         },
       },
     },
