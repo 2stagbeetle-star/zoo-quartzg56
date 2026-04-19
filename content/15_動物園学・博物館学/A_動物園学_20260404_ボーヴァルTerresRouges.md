@@ -48,3 +48,7 @@ draft: false
 - [Beauval Zoo公式「New for 2026 in Beauval: opening on Saturday 4 April!」](https://actus.zoobeauval.com/en/new-for-2026-in-beauval-opening-on-saturday-4-april/)
 - [CNEWS「ZooParc de Beauval : wombats, moutons solognot... Quels sont les nouveaux animaux ?」](https://www.cnews.fr/environnement/2026-04-10/zooparc-de-beauval-wombats-moutons-solognot-quels-sont-les-nouveaux)
 - [blooloop「18 new zoo and aquarium projects for 2026」](https://blooloop.com/new-zoo-aquarium-projects-2026/)
+
+## インフォグラフィック
+
+![??????????](./A_動物園学_20260404_ボーヴァルTerresRouges__infographic_autofix.svg)

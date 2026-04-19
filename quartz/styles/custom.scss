@@ -1,347 +1,791 @@
 @use "./base.scss";
 
-// ============================================================
-// Zoo Knowledge Vault - 自然・動物・植物テーマ カスタムCSS
-// ============================================================
+/* -------------------------------------------------------------------------- */
+/* DLAB-inspired redesign for Quartz                                           */
+/* -------------------------------------------------------------------------- */
 
-// ---- CSS変数（カラーパレット） ----
 :root {
-  // ── 自然テーマカラー ──
-  --color-forest:      #2d6a4f;
-  --color-sage:        #52796f;
-  --color-mint:        #95d5b2;
-  --color-leaf:        #74c69d;
-  --color-sky:         #a8dadc;
-  --color-sunlight:    #E7C96F;  // サンライトイエロー - バッジ・アクセント
-  --color-earth:       #8b6f47;
-  --color-bark:        #4a3728;
-  --color-cream:       #faf8f5;
-  --color-sand:        #e8e4df;
-  --color-moss:        #40916c;
+  --dl-bg-start: #000000;
+  --dl-bg-end: #000000;
+  --dl-glow-a: rgba(120, 170, 240, 0.1);
+  --dl-glow-b: rgba(110, 150, 215, 0.08);
 
-  // ── 意味的カラー（ハードコード色を変数化） ──
-  --color-forest-deep: #1b4332;  // h2・カード見出し用の深い緑
-  --color-link-default:#1b5e3a;  // リンクデフォルト色
-  --color-text-main:   #222222;  // 本文メインテキスト
-  --color-text-sub:    #555555;  // サブテキスト・日付
-  --color-text-muted:  #444444;  // フッター等
-  --color-toc-link:    #333333;  // TOCリンク
-  --color-blockquote:  #3a4a44;  // 引用ブロックテキスト
-  --color-code-bg:     #1a1e1c;  // コードブロック背景
-  --color-card-bg:     #ffffff;  // カード背景
+  --dl-surface-0: rgba(0, 0, 0, 0.8);
+  --dl-surface-1: rgba(0, 0, 0, 0.88);
+  --dl-surface-2: rgba(0, 0, 0, 0.92);
 
-  // ── トランジション変数 ──
-  --transition-fast:   0.18s;    // タグ・軽微なホバー
-  --transition-normal: 0.22s;    // カード・ボタンのホバー
+  --dl-border-soft: rgba(162, 190, 226, 0.24);
+  --dl-border-strong: rgba(184, 211, 245, 0.42);
+
+  --dl-text-main: #000000;
+  --dl-text-sub: #000000;
+  --dl-text-muted: #000000;
+
+  --dl-link: #000000;
+  --dl-link-hover: #000000;
+
+  --dl-accent: #7ea6d7;
+  --dl-accent-strong: #a9c9f3;
+
+  --dl-radius-lg: 16px;
+  --dl-radius-md: 12px;
+  --dl-radius-sm: 9px;
+
+  --dl-shadow-sm: 0 10px 28px rgba(5, 10, 17, 0.24);
+  --dl-shadow-md: 0 18px 48px rgba(5, 10, 17, 0.34);
+
+  --dl-focus-ring: 0 0 0 3px rgba(126, 166, 215, 0.22);
 }
 
-// ---- ボディ・背景 ----
-body {
-  font-family: 'Noto Sans JP', sans-serif;
-  background-color: var(--color-cream);
-  color: var(--color-text-main);
+html,
+html[saved-theme="light"],
+html[saved-theme="dark"] {
+  --light: #000000;
+  --lightgray: #1f2a3d;
+  --gray: #000000;
+  --darkgray: #000000;
+  --dark: #000000;
+  --secondary: var(--dl-link);
+  --tertiary: var(--dl-link-hover);
+  --highlight: rgba(126, 166, 215, 0.16);
+  --textHighlight: rgba(126, 166, 215, 0.32);
+}
 
-  // 背景に葉のシルエットパターン（SVGをdata URIで埋め込み）
-  &::before {
-    content: '';
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    pointer-events: none;
-    z-index: -1;
-    opacity: 0.04;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cpath d='M60 10 C30 10 10 35 10 60 C10 85 30 100 60 90 C90 100 110 85 110 60 C110 35 90 10 60 10Z' fill='%232d6a4f'/%3E%3Cpath d='M60 10 L60 90' stroke='%232d6a4f' stroke-width='2'/%3E%3Cpath d='M60 30 L80 50 M60 50 L40 65 M60 65 L75 75' stroke='%232d6a4f' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
-    background-size: 120px 120px;
+html[saved-theme="light"] {
+  --light: #000000;
+  --lightgray: #26344a;
+  --gray: #000000;
+  --darkgray: #000000;
+  --dark: #000000;
+}
+
+body {
+  background:
+    radial-gradient(80rem 40rem at 95% -10%, var(--dl-glow-a), transparent 55%),
+    radial-gradient(55rem 30rem at -5% 0%, var(--dl-glow-b), transparent 60%),
+    linear-gradient(180deg, var(--dl-bg-start), var(--dl-bg-end));
+  color: var(--dl-text-main);
+}
+
+p,
+ul,
+ol,
+li,
+tr,
+td,
+blockquote {
+  color: var(--dl-text-sub);
+}
+
+a {
+  color: var(--dl-link) !important;
+  text-decoration-color: rgba(157, 200, 255, 0.45);
+  text-underline-offset: 0.2em;
+  transition:
+    color 0.2s ease,
+    text-decoration-color 0.2s ease;
+}
+
+a:hover {
+  color: var(--dl-link-hover) !important;
+  text-decoration-color: rgba(200, 223, 255, 0.85);
+}
+
+a.internal {
+  background: rgba(126, 166, 215, 0.18);
+  border: 1px solid rgba(126, 166, 215, 0.26);
+  border-radius: 6px;
+  padding: 0.06em 0.35em;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Layout shell                                                                */
+/* -------------------------------------------------------------------------- */
+
+.page {
+  max-width: 1700px;
+}
+
+.page > #quartz-body {
+  column-gap: 1rem;
+  row-gap: 1rem;
+}
+
+.page > #quartz-body .page-header {
+  margin-top: 1.25rem;
+}
+
+.page > #quartz-body .sidebar {
+  top: 1rem;
+  height: calc(100vh - 2rem);
+  background: var(--dl-surface-0);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--dl-border-soft);
+  border-radius: var(--dl-radius-lg);
+  box-shadow: var(--dl-shadow-sm);
+  padding: 1.2rem 1.1rem;
+}
+
+@media all and (min-width: 1200px) {
+  .page > #quartz-body:has(.right.sidebar:empty) {
+    grid-template-columns: 320px minmax(0, 1fr);
+    grid-template-areas:
+      "grid-sidebar-left grid-header"
+      "grid-sidebar-left grid-center"
+      "grid-sidebar-left grid-footer";
+  }
+
+  .page > #quartz-body:has(.right.sidebar:empty) .right.sidebar {
+    display: none;
   }
 }
 
-// ---- ヘッダー ----
-header {
-  background: linear-gradient(135deg, var(--color-forest) 0%, var(--color-sage) 60%, var(--color-moss) 100%) !important;
-  border-bottom: 3px solid var(--color-mint);
-  padding: 0.5rem 1.5rem;
+.left.sidebar .page-title {
+  margin: 0 0 1rem;
+  line-height: 1.2;
+}
+
+.left.sidebar .page-title a {
+  color: var(--dl-text-main) !important;
+  font-size: clamp(1.85rem, 2.6vw, 2.35rem);
+  letter-spacing: 0.01em;
+}
+
+.center {
+  animation: fadeInUp 0.44s ease both;
+}
+
+.left.sidebar {
+  animation: fadeIn 0.44s ease both;
+}
+
+.right.sidebar {
+  animation: fadeIn 0.44s ease 0.06s both;
+}
+
+.center > article {
+  background: var(--dl-surface-1);
+  border: 1px solid var(--dl-border-soft);
+  border-radius: calc(var(--dl-radius-lg) + 2px);
+  box-shadow: var(--dl-shadow-sm);
+  padding: clamp(1rem, 1.6vw, 1.8rem);
+}
+
+footer {
+  margin-top: 1rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--dl-border-soft);
+  border-radius: var(--dl-radius-md);
+  background: var(--dl-surface-0);
+  color: var(--dl-text-muted);
+}
+
+footer p,
+footer li,
+footer a {
+  color: var(--dl-text-muted) !important;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Content typography                                                           */
+/* -------------------------------------------------------------------------- */
+
+.article-title {
+  margin-top: 0.2rem;
+  margin-bottom: 0.6rem;
+  color: var(--dl-text-main) !important;
+  font-size: clamp(2rem, 3vw, 2.9rem);
+  line-height: 1.18;
+  letter-spacing: 0.01em;
+  border-bottom: 1px solid var(--dl-border-soft);
+  padding-bottom: 0.65rem;
+}
+
+.content-meta,
+.content-meta * {
+  color: var(--dl-text-muted) !important;
+  font-weight: 500;
+}
+
+.breadcrumb-container {
+  margin-top: 0;
+  margin-bottom: 0.6rem;
+}
+
+.breadcrumb-element p {
+  color: var(--dl-text-muted);
+}
+
+article > h1,
+article > h2,
+article > h3,
+article > h4 {
+  color: var(--dl-text-main) !important;
+}
+
+article > h2 {
+  margin-top: 2.4rem;
+  border-bottom: 1px solid rgba(173, 199, 233, 0.2);
+  padding-bottom: 0.35rem;
+}
+
+article > h3 {
+  margin-top: 1.7rem;
+  color: #d9e8ff !important;
+}
+
+article hr {
+  border: none;
+  border-top: 1px solid var(--dl-border-soft);
+}
+
+article blockquote {
+  margin: 1.1rem 0;
+  border-left: 3px solid var(--dl-accent);
+  background: rgba(11, 16, 25, 0.58);
+  border-radius: 0 var(--dl-radius-sm) var(--dl-radius-sm) 0;
+  padding: 0.8rem 1rem;
+}
+
+article pre {
+  background: rgba(8, 12, 19, 0.78) !important;
+  border: 1px solid var(--dl-border-soft);
+  border-radius: var(--dl-radius-md);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+article code:not(pre code) {
+  background: rgba(126, 166, 215, 0.16);
+  border: 1px solid rgba(157, 188, 225, 0.28);
+  border-radius: 6px;
+  padding: 0.08rem 0.38rem;
+  color: #d9e8ff;
+}
+
+article table {
+  border-collapse: collapse;
+  margin: 1.4rem 0;
+  width: 100%;
+}
+
+article th {
+  background: rgba(126, 166, 215, 0.2);
+  color: var(--dl-text-main);
+  border: 1px solid var(--dl-border-soft);
+  padding: 0.6rem 0.75rem;
+}
+
+article td {
+  border: 1px solid rgba(157, 181, 214, 0.16);
+  padding: 0.55rem 0.75rem;
+  color: var(--dl-text-sub);
+}
+
+article tr:nth-child(even) td {
+  background: rgba(18, 25, 36, 0.52);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Sidebar tools                                                                */
+/* -------------------------------------------------------------------------- */
+
+.darkmode {
+  border: 1px solid var(--dl-border-soft);
+  background: rgba(11, 17, 27, 0.72);
+  border-radius: 10px;
+  padding: 0.25rem;
+}
+
+.darkmode:hover {
+  border-color: var(--dl-border-strong);
+}
+
+.darkmode:focus-visible {
+  outline: none;
+  box-shadow: var(--dl-focus-ring);
+}
+
+.search > .search-button {
+  background: rgba(11, 17, 27, 0.72);
+  border: 1px solid var(--dl-border-soft);
+  border-radius: 10px;
+  height: 2.3rem;
+}
+
+.search > .search-button > p {
+  color: var(--dl-text-sub) !important;
+}
+
+.search > .search-button .search-path {
+  stroke: var(--dl-link);
+}
+
+.search > .search-button:hover {
+  border-color: var(--dl-border-strong);
+}
+
+.search > .search-container {
+  background: rgba(6, 9, 15, 0.35);
+  backdrop-filter: blur(5px);
+}
+
+.search > .search-container > .search-space > * {
+  background: var(--dl-surface-1) !important;
+  border: 1px solid var(--dl-border-soft) !important;
+  box-shadow: var(--dl-shadow-sm);
+}
+
+.search > .search-container > .search-space > input {
+  color: var(--dl-text-main) !important;
+}
+
+.search .result-card:hover,
+.search .result-card:focus,
+.search .result-card.focus {
+  background: rgba(157, 200, 255, 0.12) !important;
+}
+
+.explorer button.desktop-explorer h2,
+.explorer button.mobile-explorer h2 {
+  color: var(--dl-text-sub);
+  letter-spacing: 0.02em;
+}
+
+.explorer-content {
+  scrollbar-width: thin;
+}
+
+.explorer-content ul li > a {
+  color: var(--dl-text-sub) !important;
+  opacity: 0.94;
+}
+
+.explorer-content ul li > a.active {
+  color: var(--dl-accent-strong) !important;
+}
+
+.folder-container div > a,
+.folder-container div > button span,
+.folder-icon {
+  color: var(--dl-text-main) !important;
+}
+
+.folder-outer > ul {
+  border-left: 1px solid rgba(164, 191, 225, 0.25);
+}
+
+.toc,
+.backlinks {
+  background: var(--dl-surface-0);
+  border: 1px solid var(--dl-border-soft);
+  border-radius: var(--dl-radius-md);
+  box-shadow: var(--dl-shadow-sm);
+  padding: 0.85rem 0.95rem;
+}
+
+.toc h3,
+.backlinks h3 {
+  color: var(--dl-text-main) !important;
+  margin-top: 0;
+  margin-bottom: 0.6rem;
+}
+
+.toc a,
+.backlinks a {
+  color: var(--dl-text-sub) !important;
+}
+
+.toc a:hover,
+.backlinks a:hover {
+  color: var(--dl-link-hover) !important;
+}
+
+/* -------------------------------------------------------------------------- */
+/* List pages and tags                                                          */
+/* -------------------------------------------------------------------------- */
+
+ul.section-ul {
+  margin-top: 1.25rem;
+}
+
+li.section-li > .section {
+  background: var(--dl-surface-2);
+  border: 1px solid var(--dl-border-soft);
+  border-radius: var(--dl-radius-md);
+  padding: 0.9rem 1rem;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+li.section-li > .section:hover {
+  transform: translateY(-2px);
+  border-color: var(--dl-border-strong);
+  background: rgba(31, 41, 56, 0.9);
+}
+
+li.section-li > .section .meta {
+  color: var(--dl-text-muted) !important;
+  opacity: 1;
+  font-weight: 600;
+}
+
+li.section-li > .section .desc h3 {
+  color: var(--dl-text-main) !important;
+}
+
+a.tag-link,
+.tag-link,
+.zoo-tag-cloud a {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  border: 1px solid var(--dl-border-soft) !important;
+  background: rgba(126, 166, 215, 0.14) !important;
+  color: var(--dl-link) !important;
+  text-decoration: none !important;
+  padding: 0.16rem 0.7rem;
+  font-size: 0.82rem;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+a.tag-link:hover,
+.tag-link:hover,
+.zoo-tag-cloud a:hover {
+  transform: translateY(-1px);
+  border-color: var(--dl-border-strong) !important;
+  color: var(--dl-link-hover) !important;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Home page blocks                                                             */
+/* -------------------------------------------------------------------------- */
+
+.zoo-section-heading {
+  color: var(--dl-text-main) !important;
+  font-size: clamp(1.18rem, 1.8vw, 1.55rem);
+  margin: 2rem 0 1rem;
+  padding: 0 0 0.55rem;
+  border: none !important;
+  border-bottom: 1px solid var(--dl-border-soft) !important;
+}
+
+.zoo-section-heading::before {
+  content: none !important;
+}
+
+.zoo-hero {
   position: relative;
   overflow: hidden;
-
-  // ヘッダー内の動物・植物装飾
-  &::after {
-    content: '';
-    position: absolute;
-    right: 20px; bottom: -5px;
-    width: 180px; height: 60px;
-    opacity: 0.18;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 60'%3E%3C!-- 木のシルエット --%3E%3Cellipse cx='30' cy='25' rx='18' ry='22' fill='%23ffffff'/%3E%3Crect x='27' y='45' width='6' height='15' fill='%23ffffff'/%3E%3Cellipse cx='65' cy='20' rx='14' ry='17' fill='%23ffffff'/%3E%3Crect x='62' y='35' width='5' height='20' fill='%23ffffff'/%3E%3C!-- 鳥 --%3E%3Cpath d='M110 18 Q118 12 126 18 Q118 15 110 18Z' fill='%23ffffff'/%3E%3Cpath d='M130 14 Q138 8 146 14 Q138 11 130 14Z' fill='%23ffffff'/%3E%3C!-- 草 --%3E%3Cpath d='M155 55 Q158 40 160 55 M162 55 Q165 38 168 55 M170 55 Q173 42 175 55' stroke='%23ffffff' stroke-width='2' fill='none'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-size: contain;
-  }
-
-  .page-title {
-    color: #ffffff !important;
-    font-family: 'Noto Serif JP', serif;
-    font-size: 1.4rem;
-    letter-spacing: 0.05em;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
-  }
+  background: linear-gradient(140deg, rgba(40, 53, 75, 0.9), rgba(26, 35, 50, 0.88));
+  border: 1px solid var(--dl-border-strong);
+  border-radius: 18px;
+  box-shadow: var(--dl-shadow-md);
+  margin: 0 0 2rem;
+  padding: clamp(1.3rem, 3vw, 2.4rem);
 }
 
-// ---- サイドバー ----
-#quartz-body .sidebar {
-  background: rgba(250, 248, 245, 0.95);
-  border-right: 1px solid var(--color-sand);
-
-  // サイドバー上部に木のアイコン装飾
-  .sidebar-content {
-    &::before {
-      content: '🌿' / '';  // スクリーンリーダー読み上げ抑制
-      display: block;
-      font-size: 1.5rem;
-      text-align: center;
-      margin: 0.5rem 0;
-      opacity: 0.6;
-    }
-  }
+.zoo-hero::before {
+  content: "";
+  position: absolute;
+  width: 460px;
+  height: 460px;
+  right: -220px;
+  bottom: -240px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(169, 201, 243, 0.24) 0%, rgba(169, 201, 243, 0) 72%);
+  pointer-events: none;
 }
 
-// ---- 記事タイトル（h1） ----
-h1 {
-  font-family: 'Noto Serif JP', serif;
-  color: var(--color-forest) !important;
-  border-bottom: 3px solid var(--color-mint);
-  padding-bottom: 0.5rem;
-  position: relative;
-
-  &::before {
-    content: '🌱 ' / '';  // スクリーンリーダー読み上げ抑制
-    font-size: 0.85em;
-  }
+.zoo-hero-tagline {
+  color: rgba(232, 239, 248, 0.72);
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.55rem;
 }
 
-// ---- 見出し（h2/h3） ----
-h2 {
-  font-family: 'Noto Serif JP', serif;
-  color: var(--color-forest-deep) !important;
-  border-left: 4px solid var(--color-mint);
-  padding-left: 0.75rem;
-  margin-top: 2rem;
+.zoo-hero .zoo-hero-title {
+  color: #f5f9ff !important;
+  margin: 0 0 0.75rem;
+  border: none !important;
+  font-size: clamp(2.1rem, 4vw, 3.2rem);
+  line-height: 1.12;
+  text-shadow: 0 3px 16px rgba(6, 12, 19, 0.42);
 }
 
-h3 {
-  color: var(--color-forest) !important;
-  border-left: 3px solid var(--color-leaf);
-  padding-left: 0.6rem;
+.zoo-hero .zoo-hero-title::before {
+  content: none !important;
 }
 
-// ---- 記事本文 ----
-.popover-hint {
-  article.popover-hint {
-    background: var(--color-cream);
-  }
+.zoo-hero-desc {
+  color: rgba(232, 239, 248, 0.9);
+  max-width: 68ch;
+  line-height: 1.86;
+  margin-bottom: 1.2rem;
 }
 
-article {
-  // 段落の行間
-  p { line-height: 1.9; }
-
-  // テーブル
-  table {
-    border-collapse: collapse;
-    width: 100%;
-    margin: 1.5rem 0;
-
-    th {
-      background: var(--color-forest);
-      color: #ffffff;
-      padding: 0.6rem 1rem;
-      font-weight: 600;
-    }
-
-    td {
-      padding: 0.5rem 1rem;
-      border-bottom: 1px solid var(--color-sand);
-    }
-
-    tr:nth-child(even) td {
-      background: rgba(149, 213, 178, 0.12);
-    }
-
-    tr:hover td {
-      background: rgba(45, 106, 79, 0.08);
-    }
-  }
-
-  // コードブロック
-  pre {
-    background: var(--color-code-bg) !important;
-    border-left: 4px solid var(--color-forest);
-    border-radius: 0 6px 6px 0;
-  }
-
-  // インラインコード
-  code:not(pre code) {
-    background: rgba(45, 106, 79, 0.1);
-    color: var(--color-forest);
-    border-radius: 3px;
-    padding: 0.1em 0.4em;
-  }
-
-  // 引用ブロック
-  blockquote {
-    border-left: 4px solid var(--color-leaf);
-    background: rgba(149, 213, 178, 0.1);
-    padding: 0.8rem 1.2rem;
-    border-radius: 0 6px 6px 0;
-    font-style: italic;
-    color: var(--color-blockquote);
-  }
-
-  // インフォグラフィック画像
-  img[src*="infographic"] {
-    width: 100%;
-    max-width: 800px;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(45, 106, 79, 0.2);
-    margin: 1.5rem auto;
-    display: block;
-    border: 2px solid var(--color-mint);
-  }
+.zoo-hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
 }
 
-// ---- タグ（共通ベース） ----
-// .tag-link と .zoo-tag-cloud a は同じ外観ベースを共有し、サイズ・余白のみ個別指定
-.tag-link, a.tag-link,
-.zoo-tag-cloud a {
-  background: rgba(45, 106, 79, 0.1) !important;
-  color: var(--color-forest) !important;
-  border: 1px solid var(--color-mint) !important;
-  border-radius: 20px;
+.zoo-btn {
+  border-radius: 999px;
+  padding: 0.56rem 1.18rem;
+  border: 1px solid var(--dl-border-soft);
   text-decoration: none !important;
-
-  &:hover {
-    background: var(--color-forest) !important;
-    color: #ffffff !important;
-  }
+  font-weight: 600;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
 }
 
-.tag-link, a.tag-link {
-  padding: 0.15em 0.7em;
-  font-size: 0.82em;
-  transition: all var(--transition-normal);
+.zoo-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--dl-shadow-sm);
+  border-color: var(--dl-border-strong);
 }
 
-// ---- グラフビュー ----
-.graph {
-  .node circle {
-    fill: var(--color-leaf) !important;
-    stroke: var(--color-forest) !important;
-  }
-  .link {
-    stroke: var(--color-mint) !important;
-  }
+.zoo-btn.zoo-btn-primary {
+  background: linear-gradient(135deg, #a6c7ef, #7ca6db);
+  color: #0f1d30 !important;
 }
 
-// ---- 検索 ----
-#search-bar {
-  border: 2px solid var(--color-mint) !important;
-  border-radius: 8px;
-
-  &:focus {
-    border-color: var(--color-forest) !important;
-    box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.15);
-  }
+.zoo-btn.zoo-btn-secondary {
+  background: rgba(11, 17, 27, 0.45);
+  color: var(--dl-text-main) !important;
 }
 
-// ---- フッター ----
-footer {
-  border-top: 2px solid var(--color-mint);
-  padding: 1.5rem;
-  text-align: center;
-  color: var(--color-text-muted);
-  font-size: 0.85rem;
-  position: relative;
-
-  &::before {
-    content: '🦁 🌿 🦜 🌸 🐢 🌲 🦋 🌾 🐘' / '';  // スクリーンリーダー読み上げ抑制
-    display: block;
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-    letter-spacing: 0.3em;
-    opacity: 0.7;
-  }
+.zoo-category-grid,
+.zoo-recent-grid,
+.zoo-featured-section,
+.zoo-discover-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+  margin: 1.2rem 0 2rem;
 }
 
-// ---- リンク ----
-a {
-  color: var(--color-link-default) !important;
-  text-decoration-color: var(--color-mint);
-  font-weight: 500;
-
-  &:hover {
-    color: var(--color-forest) !important;
-    text-decoration-color: var(--color-forest);
-  }
+.zoo-learn-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin: 1.2rem 0 2rem;
 }
 
-// ---- バックリンク・関連記事パネル ----
-.backlinks {
-  border: 1px solid var(--color-mint);
-  border-radius: 8px;
-  padding: 1rem;
-  background: rgba(149, 213, 178, 0.06);
-
-  h3::before {
-    content: '🔗 ' / '';  // スクリーンリーダー読み上げ抑制
-  }
+.zoo-category-card,
+.zoo-recent-article,
+.zoo-featured-card,
+.zoo-learn-card,
+.zoo-discover-card {
+  background: var(--dl-surface-2);
+  border: 1px solid var(--dl-border-soft);
+  border-radius: var(--dl-radius-md);
+  box-shadow: var(--dl-shadow-sm);
+  transition:
+    transform 0.22s ease,
+    border-color 0.22s ease,
+    box-shadow 0.22s ease,
+    background-color 0.22s ease;
 }
 
-// ---- 目次（TOC） ----
-#toc {
-  border-left: 3px solid var(--color-mint);
-  padding-left: 1rem;
-
-  li a { color: var(--color-toc-link) !important; font-weight: 500; }
-  li a:hover { color: var(--color-forest) !important; }
+.zoo-category-card:hover,
+.zoo-recent-article:hover,
+.zoo-featured-card:hover,
+.zoo-learn-card:hover,
+.zoo-discover-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--dl-border-strong);
+  box-shadow: var(--dl-shadow-md);
+  background: rgba(31, 41, 56, 0.9);
 }
 
-// ---- スクロールバー ----
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: var(--color-sand);
-}
-::-webkit-scrollbar-thumb {
-  background: var(--color-mint);
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-forest);
+.zoo-cat-photo,
+.zoo-recent-photo {
+  background: var(--cat-gradient, linear-gradient(135deg, #2f4460, #26374d));
+  border-bottom: 1px solid rgba(170, 198, 235, 0.24);
 }
 
-// ---- 記事カード（フォルダビュー） ----
-.section-ul {
-  li {
-    border-left: 3px solid var(--color-mint);
-    padding-left: 0.8rem;
-    margin: 0.4rem 0;
-    transition: border-color var(--transition-normal);
-
-    &:hover {
-      border-color: var(--color-forest);
-    }
-  }
+.zoo-cat-photo {
+  min-height: 108px;
 }
 
-// ---- 種別図鑑テーブル（保全ステータス色分け） ----
-.cr-status { color: #c62828; font-weight: bold; }  // CR危機
-.en-status { color: #e65100; font-weight: bold; }  // EN危惧
-.vu-status { color: #f57f17; font-weight: bold; }  // VU危急
-.nt-status { color: #558b2f; }                     // NT準絶滅
-.lc-status { color: var(--color-forest); }         // LC低懸念
+.zoo-recent-photo {
+  min-height: 84px;
+}
 
-// ============================================================
-// Zoo Knowledge Vault - フェードイン・カードUI・ヒーローセクション
-// ============================================================
+.zoo-cat-emoji,
+.zoo-recent-photo span,
+.zoo-featured-emoji,
+.zoo-learn-icon,
+.zoo-discover-emoji {
+  filter: drop-shadow(0 3px 9px rgba(6, 10, 16, 0.45));
+}
 
-// ---- フェードイン キーフレーム ----
+.zoo-cat-body,
+.zoo-recent-body {
+  padding: 0.85rem 0.95rem 0.95rem;
+}
+
+.zoo-cat-body h3,
+.zoo-recent-body h3,
+.zoo-featured-card h3,
+.zoo-learn-card h3,
+.zoo-discover-card h3 {
+  margin: 0 0 0.4rem;
+  border: none !important;
+  padding: 0 !important;
+  color: var(--dl-text-main) !important;
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+
+.zoo-cat-body p,
+.zoo-recent-body p,
+.zoo-featured-card p,
+.zoo-learn-card p,
+.zoo-discover-card p,
+.zoo-recent-date {
+  color: var(--dl-text-sub) !important;
+  font-size: 0.79rem;
+  line-height: 1.54;
+}
+
+.zoo-featured-card,
+.zoo-learn-card {
+  padding: 1rem 1rem 1.05rem;
+}
+
+.zoo-featured-label {
+  align-self: flex-start;
+  border-radius: 999px;
+  padding: 0.16rem 0.65rem;
+  margin-bottom: 0.62rem;
+  background: rgba(169, 201, 243, 0.2);
+  color: #d5e6ff;
+  border: 1px solid rgba(169, 201, 243, 0.33);
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.zoo-featured-link,
+.zoo-discover-links li a {
+  color: var(--dl-link) !important;
+  font-weight: 600;
+}
+
+.zoo-discover-header {
+  border-bottom: 1px solid var(--dl-border-soft);
+  margin-bottom: 0.55rem;
+  padding-bottom: 0.45rem;
+}
+
+.zoo-discover-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.zoo-discover-links li {
+  margin-top: 0.26rem;
+}
+
+.zoo-discover-links li a::before {
+  content: "• ";
+  color: var(--dl-accent-strong);
+  font-weight: 700;
+}
+
+/* Muted category gradients */
+[data-cat="diary"] {
+  --cat-gradient: linear-gradient(135deg, #4f6588, #324760);
+}
+[data-cat="season"] {
+  --cat-gradient: linear-gradient(135deg, #5a4f84, #3f3f66);
+}
+[data-cat="howto"] {
+  --cat-gradient: linear-gradient(135deg, #3d6580, #2c4f66);
+}
+[data-cat="news"] {
+  --cat-gradient: linear-gradient(135deg, #2f5379, #294161);
+}
+[data-cat="guide"] {
+  --cat-gradient: linear-gradient(135deg, #496278, #32475b);
+}
+[data-cat="nature"] {
+  --cat-gradient: linear-gradient(135deg, #345d62, #2a474e);
+}
+[data-cat="aquarium"] {
+  --cat-gradient: linear-gradient(135deg, #2c5f73, #24495a);
+}
+[data-cat="protect"] {
+  --cat-gradient: linear-gradient(135deg, #405d63, #2c4549);
+}
+[data-cat="vet"] {
+  --cat-gradient: linear-gradient(135deg, #3b567a, #2c4563);
+}
+[data-cat="bio"] {
+  --cat-gradient: linear-gradient(135deg, #4b5679, #343f5d);
+}
+[data-cat="ecology"] {
+  --cat-gradient: linear-gradient(135deg, #3b5b69, #2d4551);
+}
+[data-cat="plants"] {
+  --cat-gradient: linear-gradient(135deg, #40676c, #2e4b4f);
+}
+[data-cat="taxon"] {
+  --cat-gradient: linear-gradient(135deg, #596583, #3f4d67);
+}
+[data-cat="climate"] {
+  --cat-gradient: linear-gradient(135deg, #3b5f7f, #2d4a65);
+}
+[data-cat="zoo"] {
+  --cat-gradient: linear-gradient(135deg, #3f5f70, #2f4956);
+}
+[data-cat="jobs"] {
+  --cat-gradient: linear-gradient(135deg, #55647a, #3c4b5d);
+}
+[data-cat="research"] {
+  --cat-gradient: linear-gradient(135deg, #4a5b79, #33435c);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Small utilities                                                             */
+/* -------------------------------------------------------------------------- */
+
+.cr-status {
+  color: #ff8c8c;
+  font-weight: 700;
+}
+
+.en-status {
+  color: #ffb982;
+  font-weight: 700;
+}
+
+.vu-status {
+  color: #ffd88f;
+  font-weight: 700;
+}
+
+.nt-status {
+  color: #b7d89b;
+}
+
+.lc-status {
+  color: #9dc8ff;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Motion + responsive                                                          */
+/* -------------------------------------------------------------------------- */
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -354,582 +798,49 @@ a {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
-// ---- ページ全体フェードイン ----
-.center {
-  animation: fadeInUp 0.45s ease-out both;
-}
-
-.left-sidebar {
-  animation: fadeIn 0.5s ease-out 0.1s both;
-}
-
-.right-sidebar {
-  animation: fadeIn 0.5s ease-out 0.2s both;
-}
-
-// ---- ヒーローセクション ----
-.zoo-hero {
-  background: linear-gradient(135deg,
-    var(--color-forest)  0%,
-    var(--color-moss)   40%,
-    var(--color-sage)   80%,
-    var(--color-sky)   100%
-  );
-  border-radius: 12px;
-  padding: 3rem 2.5rem;
-  margin: 0 0 2.5rem 0;
-  position: relative;
-  overflow: hidden;
-  animation: fadeInUp 0.5s ease-out;
-
-  &::before {
-    content: '🌿 🦁 🌊 🦜 🌲 🐘 🐠 🦋' / '';  // スクリーンリーダー読み上げ抑制
-    position: absolute;
-    top: 10px;
-    right: 16px;
-    font-size: 1.2rem;
-    letter-spacing: 0.2em;
-    opacity: 0.3;
-    pointer-events: none;
+  from {
+    opacity: 0;
   }
-
-  .zoo-hero-tagline {
-    font-size: 0.9rem;
-    color: rgba(255,255,255,0.85);
-    margin-bottom: 0.6rem;
-    letter-spacing: 0.05em;
-  }
-
-  .zoo-hero-title {
-    color: #ffffff !important;
-    border-bottom: none !important;
-    font-size: 2rem;
-    margin: 0 0 0.8rem 0;
-    padding-bottom: 0;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.25);
-
-    &::before { content: '' !important; }
-  }
-
-  .zoo-hero-desc {
-    color: rgba(255,255,255,0.92);
-    font-size: 1rem;
-    line-height: 1.8;
-    margin-bottom: 1.5rem;
-    max-width: 600px;
-  }
-
-  .zoo-hero-buttons {
-    display: flex;
-    gap: 0.8rem;
-    flex-wrap: wrap;
+  to {
+    opacity: 1;
   }
 }
 
-// ---- ボタン ----
-.zoo-btn {
-  display: inline-block;
-  padding: 0.65rem 1.4rem;
-  border-radius: 6px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  text-decoration: none !important;
-  transition: all var(--transition-normal) ease;
-  cursor: pointer;
-
-  &.zoo-btn-primary {
-    background: var(--color-card-bg);
-    color: var(--color-forest) !important;
-
-    &:hover {
-      background: #f0faf4;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-  }
-
-  &.zoo-btn-secondary {
-    background: rgba(255,255,255,0.2);
-    color: #ffffff !important;
-    border: 1px solid rgba(255,255,255,0.5);
-
-    &:hover {
-      background: rgba(255,255,255,0.35);
-      transform: translateY(-2px);
-    }
+@media all and (max-width: 1199px) {
+  .page > #quartz-body .sidebar {
+    position: initial;
+    top: auto;
+    height: auto;
+    margin: 0;
   }
 }
 
-// ---- カテゴリグリッド ----
-.zoo-category-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
-  gap: 1.1rem;
-  margin: 1.5rem 0 2.5rem 0;
-}
-
-// ---- カテゴリカード（写真ヘッダー型） ----
-.zoo-category-card {
-  display: flex;
-  flex-direction: column;
-  background: var(--color-card-bg);
-  border-radius: 12px;
-  text-decoration: none !important;
-  color: var(--color-text-main) !important;
-  transition: transform var(--transition-normal) ease, box-shadow var(--transition-normal) ease;
-  box-shadow: 0 2px 8px rgba(45,106,79,0.09);
-  overflow: hidden;
-  border: 1px solid var(--color-sand);
-
-  &.visible {
-    animation: cardReveal 0.5s ease-out;
+@media all and (max-width: 800px) {
+  .page > #quartz-body .page-header {
+    margin-top: 0.35rem;
   }
 
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 28px rgba(45,106,79,0.18);
-    text-decoration: none !important;
-    color: var(--color-text-main) !important;
-
-    .zoo-cat-emoji {
-      transform: scale(1.2) rotate(-5deg);
-    }
+  .left.sidebar .page-title a {
+    font-size: 1.5rem;
   }
 
-  .zoo-cat-photo {
-    height: 110px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--cat-gradient, linear-gradient(135deg, var(--color-forest), var(--color-sage)));
-    position: relative;
-    overflow: hidden;
-
-    &::before {
-      content: '';
-      position: absolute;
-      width: 140px; height: 140px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.07);
-      top: -30px; right: -30px;
-    }
-    &::after {
-      content: '';
-      position: absolute;
-      width: 80px; height: 80px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.05);
-      bottom: -15px; left: -15px;
-    }
-
-    .zoo-cat-emoji {
-      font-size: 2.6rem;
-      line-height: 1;
-      z-index: 1;
-      transition: transform var(--transition-normal) ease;
-      filter: drop-shadow(0 2px 6px rgba(0,0,0,0.25));
-    }
+  .center > article {
+    padding: 0.95rem;
   }
 
-  .zoo-cat-body {
-    padding: 0.75rem 0.9rem 0.85rem;
-
-    h3 {
-      font-family: 'Noto Serif JP', serif;
-      font-size: 0.88rem;
-      color: var(--color-forest-deep) !important;
-      border-left: none !important;
-      padding-left: 0 !important;
-      margin: 0 0 0.2rem 0;
-      line-height: 1.3;
-    }
-
-    p {
-      font-size: 0.76rem;
-      color: var(--color-text-sub);
-      margin: 0;
-      line-height: 1.45;
-    }
-  }
-}
-
-@keyframes cardReveal {
-  from { opacity: 0; transform: translateY(16px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-// ---- カテゴリ別グラデーション（CSS変数でDRY化） ----
-// data-cat 属性で --cat-gradient を設定し、.zoo-cat-photo / .zoo-recent-photo が継承
-[data-cat="diary"]    { --cat-gradient: linear-gradient(135deg, #8b4513, #c4783c); }
-[data-cat="season"]   { --cat-gradient: linear-gradient(135deg, #b83c6b, #e07390); }
-[data-cat="howto"]    { --cat-gradient: linear-gradient(135deg, var(--color-forest), var(--color-sage)); }
-[data-cat="news"]     { --cat-gradient: linear-gradient(135deg, #1565c0, #2196f3); }
-[data-cat="guide"]    { --cat-gradient: linear-gradient(135deg, #e65100, #f57c00); }
-[data-cat="nature"]   { --cat-gradient: linear-gradient(135deg, #1b5e20, #388e3c); }
-[data-cat="aquarium"] { --cat-gradient: linear-gradient(135deg, #006064, #0097a7); }
-[data-cat="protect"]  { --cat-gradient: linear-gradient(135deg, #1a3720, #2e6b3e); }
-[data-cat="vet"]      { --cat-gradient: linear-gradient(135deg, #0d47a1, #1976d2); }
-[data-cat="bio"]      { --cat-gradient: linear-gradient(135deg, #4a148c, #7b1fa2); }
-[data-cat="ecology"]  { --cat-gradient: linear-gradient(135deg, #1e5631, #2e7d32); }
-[data-cat="plants"]   { --cat-gradient: linear-gradient(135deg, #33691e, #558b2f); }
-[data-cat="taxon"]    { --cat-gradient: linear-gradient(135deg, #bf360c, #e64a19); }
-[data-cat="climate"]  { --cat-gradient: linear-gradient(135deg, #01579b, #0288d1); }
-[data-cat="zoo"]      { --cat-gradient: linear-gradient(135deg, #1b4332, #40916c); }
-[data-cat="jobs"]     { --cat-gradient: linear-gradient(135deg, #7f3f00, #cc7400); }
-[data-cat="research"] { --cat-gradient: linear-gradient(135deg, #1a237e, #283593); }
-
-// ---- 新着記事グリッド ----
-.zoo-recent-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 1.1rem;
-  margin: 1.5rem 0 2.5rem 0;
-}
-
-.zoo-recent-article {
-  display: flex;
-  flex-direction: column;
-  background: var(--color-card-bg);
-  border-radius: 12px;
-  border: 1px solid var(--color-sand);
-  box-shadow: 0 2px 8px rgba(45,106,79,0.08);
-  text-decoration: none !important;
-  color: var(--color-text-main) !important;
-  overflow: hidden;
-  transition: transform var(--transition-normal) ease, box-shadow var(--transition-normal) ease;
-
-  &.visible {
-    animation: cardReveal 0.5s ease-out;
-  }
-
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 28px rgba(45,106,79,0.18);
-    text-decoration: none !important;
-    color: var(--color-text-main) !important;
-  }
-
-  .zoo-recent-photo {
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--cat-gradient, linear-gradient(135deg, var(--color-forest), var(--color-sage)));
-    font-size: 2.2rem;
-    position: relative;
-    overflow: hidden;
-
-    &::before {
-      content: '';
-      position: absolute;
-      width: 100px; height: 100px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.07);
-      top: -20px; right: -20px;
-    }
-
-    span {
-      z-index: 1;
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
-    }
-  }
-
-  .zoo-recent-body {
-    padding: 0.8rem 0.95rem 0.9rem;
-
-    .zoo-recent-date {
-      display: block;
-      font-size: 0.73rem;
-      color: var(--color-text-sub);
-      margin-bottom: 0.3rem;
-      font-weight: 500;
-    }
-
-    h3 {
-      font-size: 0.88rem;
-      color: var(--color-forest-deep) !important;
-      border-left: none !important;
-      padding-left: 0 !important;
-      margin: 0 0 0.25rem 0;
-      line-height: 1.35;
-      font-weight: 700;
-    }
-
-    p {
-      font-size: 0.76rem;
-      color: var(--color-text-sub);
-      margin: 0;
-      line-height: 1.4;
-    }
-  }
-}
-
-// ---- タグクラウド ----
-.zoo-tag-cloud {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin: 1rem 0 2rem 0;
-
-  // 共通ベースは .tag-link と共有済み。ここでは差分のみ指定
-  a {
-    padding: 0.25em 0.8em;
-    font-size: 0.83rem;
-    transition: all var(--transition-fast) ease;
-
-    &:hover {
-      transform: translateY(-1px);
-    }
-  }
-}
-
-// ---- セクション見出し（ホームページ用） ----
-.zoo-section-heading {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 1.15rem;
-  color: var(--color-forest-deep) !important;
-  font-weight: 700;
-  border-left: 4px solid var(--color-mint) !important;
-  border-bottom: none !important;
-  padding: 0.2rem 0 0.2rem 0.8rem !important;
-  margin: 2rem 0 1rem 0;
-
-  &::before { content: '' !important; }
-}
-
-// ---- ナビゲーション・Explorer テキスト強化 ----
-// Quartzデフォルトの薄いgray色を上書き
-.explorer-content a,
-.sidebar a,
-.folder-title,
-.folder-outer a {
-  color: var(--color-text-main) !important;
-  font-weight: 500;
-
-  &:hover {
-    color: var(--color-forest) !important;
-  }
-}
-
-// 記事一覧ページのテキスト
-.section-ul li a,
-.page-listing li a {
-  color: var(--color-text-main) !important;
-  font-weight: 500;
-}
-
-// コンテンツメタ（日付・読了時間）
-.content-meta {
-  color: var(--color-text-sub) !important;
-  font-weight: 500;
-}
-
-// ---- ダークモード対応 ----
-[saved-theme="dark"] {
-  // カード
-  .zoo-category-card,
-  .zoo-recent-article {
-    background: var(--color-lightgray);
-    border-color: var(--color-gray);
-    color: var(--darkgray) !important;
-  }
-
-  // カード内テキスト
-  .zoo-cat-body h3,
-  .zoo-recent-body h3 {
-    color: var(--darkgray) !important;
-  }
-  .zoo-cat-body p,
-  .zoo-recent-body p,
-  .zoo-recent-date,
-  .content-meta {
-    color: var(--gray) !important;
-  }
-
-  // ヒーロー（輝度を落として視認性を確保）
   .zoo-hero {
-    background: linear-gradient(135deg, #1a3d2e 0%, #254f3e 40%, #2e4040 80%, #3a5f60 100%);
+    padding: 1.1rem 1rem;
   }
 
-  // フッター
-  footer {
-    color: var(--gray);
+  .zoo-hero .zoo-hero-title {
+    font-size: 1.8rem;
   }
-
-  // サイドバー
-  #quartz-body .sidebar {
-    background: rgba(30, 30, 30, 0.95);
-    border-color: var(--color-gray);
-  }
-
-  // プライマリボタン
-  .zoo-btn.zoo-btn-primary {
-    background: #1e3a2e;
-    color: var(--color-mint) !important;
-  }
-
-  // ⑤⑥⑦ 新セクション ダークモード
-  .zoo-featured-card,
-  .zoo-learn-card,
-  .zoo-discover-card {
-    background: var(--color-lightgray);
-    border-color: var(--color-gray);
-    color: var(--darkgray) !important;
-    h3 { color: var(--darkgray) !important; }
-    p   { color: var(--gray) !important; }
-  }
-  .zoo-featured-label { background: rgba(231,201,111,0.85); color: #2a1f00; }
-  .zoo-featured-link  { color: var(--color-mint) !important; }
-  .zoo-discover-links li a { color: var(--color-mint) !important; }
 }
 
-// ============================================================
-// Zoo Knowledge Vault - ⑤⑥⑦ 特集・学習・回遊セクション
-// ============================================================
-
-// ---- ⑤ 今月の特集（3カラム） ----
-.zoo-featured-section {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.1rem;
-  margin: 1.5rem 0 2.5rem 0;
-  @media (max-width: 800px) { grid-template-columns: 1fr; }
-}
-
-.zoo-featured-card {
-  display: flex;
-  flex-direction: column;
-  background: var(--color-card-bg);
-  border-radius: 12px;
-  border: 1px solid var(--color-sand);
-  box-shadow: 0 2px 8px rgba(45,106,79,0.09);
-  padding: 1.4rem 1.2rem 1.1rem;
-  text-decoration: none !important;
-  color: var(--color-text-main) !important;
-  position: relative;
-  overflow: hidden;
-  transition: transform var(--transition-normal) ease,
-              box-shadow var(--transition-normal) ease;
-  &::before {
-    content: '';
-    position: absolute; top: 0; left: 0; right: 0; height: 3px;
-    background: var(--color-sunlight);
-    border-radius: 12px 12px 0 0;
-  }
-  &.visible { animation: cardReveal 0.5s ease-out; }
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 28px rgba(45,106,79,0.18);
-    text-decoration: none !important;
-    color: var(--color-text-main) !important;
-  }
-  .zoo-featured-label {
-    display: inline-block;
-    background: var(--color-sunlight);
-    color: var(--color-bark);
-    font-size: 0.7rem; font-weight: 700;
-    padding: 0.18em 0.65em; border-radius: 20px;
-    margin-bottom: 0.7rem; letter-spacing: 0.04em; align-self: flex-start;
-  }
-  .zoo-featured-emoji { font-size: 2.2rem; margin-bottom: 0.5rem; }
-  h3 {
-    font-family: 'Noto Serif JP', serif; font-size: 0.92rem;
-    color: var(--color-forest-deep) !important;
-    border-left: none !important; padding-left: 0 !important;
-    margin: 0 0 0.4rem 0; line-height: 1.35; font-weight: 700;
-  }
-  p { font-size: 0.78rem; color: var(--color-text-sub); margin: 0 0 0.9rem 0; line-height: 1.5; flex: 1; }
-  .zoo-featured-link { font-size: 0.78rem; font-weight: 600; color: var(--color-forest) !important; align-self: flex-start; }
-}
-
-// ---- ⑥ 学びのテーマ別（4カラム） ----
-.zoo-learn-section {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-  margin: 1.5rem 0 2.5rem 0;
-  @media (max-width: 800px) { grid-template-columns: repeat(2, 1fr); }
-}
-
-.zoo-learn-card {
-  display: flex; flex-direction: column; align-items: center; text-align: center;
-  background: var(--color-card-bg);
-  border-radius: 12px; border: 1px solid var(--color-sand);
-  box-shadow: 0 2px 8px rgba(45,106,79,0.08);
-  padding: 1.4rem 1rem 1.2rem;
-  text-decoration: none !important; color: var(--color-text-main) !important;
-  transition: transform var(--transition-normal) ease, box-shadow var(--transition-normal) ease;
-  &.visible { animation: cardReveal 0.5s ease-out; }
-  &:hover {
-    transform: translateY(-4px); box-shadow: 0 10px 28px rgba(45,106,79,0.18);
-    text-decoration: none !important; color: var(--color-text-main) !important;
-    .zoo-learn-icon { transform: scale(1.18); }
-  }
-  .zoo-learn-icon {
-    font-size: 2.4rem; margin-bottom: 0.6rem;
-    transition: transform var(--transition-normal) ease;
-  }
-  h3 {
-    font-family: 'Noto Serif JP', serif; font-size: 0.9rem;
-    color: var(--color-forest-deep) !important;
-    border-left: none !important; padding-left: 0 !important;
-    margin: 0 0 0.45rem 0; font-weight: 700;
-    &::after {
-      content: ''; display: block; width: 28px; height: 2px;
-      background: var(--color-sunlight); margin: 0.3rem auto 0; border-radius: 2px;
-    }
-  }
-  p { font-size: 0.76rem; color: var(--color-text-sub); margin: 0; line-height: 1.5; }
-}
-
-// ---- ⑦ コンテンツ回遊導線（3カラム） ----
-.zoo-discover-section {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.1rem;
-  margin: 1.5rem 0 2.5rem 0;
-  @media (max-width: 800px) { grid-template-columns: 1fr; }
-}
-
-.zoo-discover-card {
-  background: var(--color-card-bg);
-  border-radius: 12px; border: 1px solid var(--color-sand);
-  box-shadow: 0 2px 8px rgba(45,106,79,0.08);
-  padding: 1.2rem 1.1rem 1.1rem;
-  color: var(--color-text-main);
-  display: flex; flex-direction: column;
-  transition: transform var(--transition-normal) ease, box-shadow var(--transition-normal) ease;
-  &.visible { animation: cardReveal 0.5s ease-out; }
-  &:hover {
-    transform: translateY(-4px); box-shadow: 0 10px 28px rgba(45,106,79,0.18);
-    .zoo-discover-emoji { transform: scale(1.15) rotate(-4deg); }
-  }
-  .zoo-discover-header {
-    display: flex; align-items: center; gap: 0.55rem;
-    margin-bottom: 0.6rem; padding-bottom: 0.5rem;
-    border-bottom: 2px solid var(--color-sunlight);
-  }
-  .zoo-discover-emoji {
-    font-size: 1.8rem; transition: transform var(--transition-normal) ease;
-  }
-  h3 {
-    font-family: 'Noto Serif JP', serif; font-size: 0.95rem;
-    color: var(--color-forest-deep) !important;
-    border-left: none !important; padding-left: 0 !important;
-    margin: 0; font-weight: 700;
-  }
-  p { font-size: 0.77rem; color: var(--color-text-sub); line-height: 1.55; margin: 0 0 0.8rem 0; flex: 1; }
-  .zoo-discover-links {
-    list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.3rem;
-    li a {
-      font-size: 0.78rem; font-weight: 600; color: var(--color-forest) !important;
-      text-decoration: none !important;
-      &::before { content: '›  '; color: var(--color-sunlight); font-weight: 900; }
-      &:hover { color: var(--color-moss) !important; text-decoration: underline !important; }
-    }
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
   }
 }

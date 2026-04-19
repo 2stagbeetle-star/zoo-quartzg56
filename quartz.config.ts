@@ -1,14 +1,7 @@
 import { QuartzConfig } from "./quartz/cfg"
 import * as Plugin from "./quartz/plugins"
 
-/**
- * Zoo Knowledge Vault - Quartz4 設定ファイル
- * 使い方:
- *   1. このファイルを ~/Documents/zoo-quartz/quartz.config.ts にコピー
- *   2. baseUrl の YOUR_GITHUB_USERNAME を実際のGitHubユーザー名に変更
- *   3. npx quartz build --serve でローカル確認
- *   4. npx quartz sync でデプロイ
- */
+// Site-wide Quartz configuration for Zoo Knowledge Vault.
 const config: QuartzConfig = {
   configuration: {
     pageTitle: "Zoo Knowledge Vault",
@@ -17,43 +10,38 @@ const config: QuartzConfig = {
     analytics: null,
     locale: "ja-JP",
     baseUrl: "2stagbeetle-star.github.io/zoo-quartzg56",
-    ignorePatterns: [
-      "_drafts",
-      "_templates",
-      ".obsidian",
-      ".claude"
-    ],
+    ignorePatterns: ["_drafts", "_templates", ".obsidian", ".claude"],
     defaultDateType: "modified",
     theme: {
       fontOrigin: "googleFonts",
       cdnCaching: true,
       typography: {
-        header: "Noto Serif JP",
-        body: "Noto Sans JP",
+        header: "Shippori Mincho",
+        body: "Zen Kaku Gothic New",
         code: "IBM Plex Mono",
       },
       colors: {
         lightMode: {
-          light: "#f8f6f2",
-          lightgray: "#e8e2d6",
-          gray: "#8c7a68",
-          darkgray: "#2c2820",
-          dark: "#1a1510",
-          secondary: "#2d5a27",   // 深い森緑（プライマリ）
-          tertiary: "#5a7a50",    // セージグリーン
-          highlight: "rgba(45, 90, 39, 0.08)",
-          textHighlight: "#c8a84b44",
+          light: "#000000",
+          lightgray: "#26344a",
+          gray: "#000000",
+          darkgray: "#000000",
+          dark: "#000000",
+          secondary: "#000000",
+          tertiary: "#000000",
+          highlight: "rgba(0, 0, 0, 0.08)",
+          textHighlight: "rgba(0, 0, 0, 0.16)",
         },
         darkMode: {
-          light: "#1a1e1c",
-          lightgray: "#2e3530",
-          gray: "#8a9e8a",
-          darkgray: "#dde4dd",
-          dark: "#e8ede8",
-          secondary: "#7ab888",
-          tertiary: "#9dd0a0",
-          highlight: "rgba(122, 184, 136, 0.10)",
-          textHighlight: "#c8a84b44",
+          light: "#000000",
+          lightgray: "#1f2a3d",
+          gray: "#000000",
+          darkgray: "#000000",
+          dark: "#000000",
+          secondary: "#000000",
+          tertiary: "#000000",
+          highlight: "rgba(0, 0, 0, 0.08)",
+          textHighlight: "rgba(0, 0, 0, 0.16)",
         },
       },
     },
