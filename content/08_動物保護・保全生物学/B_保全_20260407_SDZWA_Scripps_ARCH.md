@@ -36,7 +36,3 @@ draft: false
 
 ## 参照元
 - [EurekAlert! プレスリリース](https://www.eurekalert.org/news-releases/1123002)（2026/04/07）
-
-## インフォグラフィック
-
-![??????????](./B_保全_20260407_SDZWA_Scripps_ARCH__infographic_autofix.svg)

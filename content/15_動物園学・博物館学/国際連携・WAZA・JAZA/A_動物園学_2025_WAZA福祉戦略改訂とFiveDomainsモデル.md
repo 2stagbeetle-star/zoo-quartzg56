@@ -57,7 +57,3 @@ draft: false
 
 ## 参考・引用元
 - waza.org / eaza.net / species360.org
-
-## インフォグラフィック
-
-![??????????](./A_動物園学_2025_WAZA福祉戦略改訂とFiveDomainsモデル__infographic_autofix.svg)

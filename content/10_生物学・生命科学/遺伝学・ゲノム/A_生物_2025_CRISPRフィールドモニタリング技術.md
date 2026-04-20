@@ -51,7 +51,3 @@ draft: false
 
 ## 参考・引用元
 - PBS / NIH / NPR Illinois
-
-## インフォグラフィック
-
-![??????????](./A_生物_2025_CRISPRフィールドモニタリング技術__infographic_autofix.svg)

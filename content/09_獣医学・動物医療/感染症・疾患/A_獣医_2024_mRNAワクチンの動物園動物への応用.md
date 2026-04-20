@@ -61,7 +61,3 @@ mRNAワクチンが対象とする動物園動物の主要感染症：
 - Zoetis (2024) *mRNA Vaccine Platform for Zoo and Wildlife Species*
 - Frontiers in Veterinary Science (2024) *Next-Generation Vaccines for Exotic Animals*
 - AAZV Journal (2025) *Immunization Protocols for Zoological Collections*
-
-## インフォグラフィック
-
-![??????????](./A_獣医_2024_mRNAワクチンの動物園動物への応用__infographic_autofix.svg)
